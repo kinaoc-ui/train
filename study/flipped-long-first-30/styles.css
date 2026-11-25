@@ -695,3 +695,23 @@ blockquote {
 .index-lead {
   max-width: 44rem;
 }
+
+
+.subject-group {
+  margin: 2.4rem 0 0;
+  max-width: 52rem;
+}
+.subject-group > h2 {
+  margin: 0 0 0.2rem;
+  font-size: 1.25rem;
+}
+.subject-group > .group-range {
+  margin: 0 0 0.15rem;
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.subject-group .subject-list {
+  margin-top: 0.9rem;
+}
