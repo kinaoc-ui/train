@@ -1,4 +1,4 @@
-"""Streamlit entrypoint for the Flipped long first-30 study site.
+"""Streamlit entrypoint for the Flipped long study site.
 
 Community Cloud main file path:
     study/flipped-long-first-30/streamlit_app.py
@@ -18,50 +18,83 @@ import streamlit as st
 import study_content as content
 
 ROOT = Path(__file__).resolve().parent
-INDEX_ID = content.INDEX["id"]
+SUBJECT_INDEX = "__subjects__"
 
 
-def _ids() -> list[str]:
-    return [INDEX_ID] + [subject["id"] for subject in content.SUBJECTS]
-
-
-def _label(subject_id: str) -> str:
-    if subject_id == INDEX_ID:
-        return "科目目錄"
-    subject = content.subject_by_id(subject_id)
-    assert subject is not None
-    return f"{subject['when']}  {subject['pager_name']}"
-
-
-def _set_query(subject_id: str) -> None:
-    if subject_id == INDEX_ID:
-        st.query_params.pop("subject", None)
+def _sync_query() -> None:
+    stream_id = st.session_state.nav_stream
+    subject_id = st.session_state.nav_subject
+    if stream_id:
+        st.query_params["stream"] = stream_id
     else:
+        st.query_params.pop("stream", None)
+    if subject_id:
         st.query_params["subject"] = subject_id
+    else:
+        st.query_params.pop("subject", None)
 
 
 def _init_nav() -> None:
-    if "nav" not in st.session_state:
-        requested = st.query_params.get("subject", INDEX_ID)
-        st.session_state.nav = requested if requested in _ids() else INDEX_ID
-    # A subject card or pager sets nav and asks the next run to move the radio.
+    if "nav_stream" not in st.session_state:
+        stream_id = st.query_params.get("stream")
+        subject_id = st.query_params.get("subject")
+        stream = content.stream_by_id(stream_id) if stream_id else None
+        subject = content.subject_by_id(subject_id) if subject_id else None
+        if subject is not None and stream is None:
+            stream = content.stream_for_subject(subject["id"])
+        if stream is not None and subject is not None:
+            if all(item["id"] != subject["id"] for item in stream["subjects"]):
+                subject = None
+        st.session_state.nav_stream = stream["id"] if stream else None
+        st.session_state.nav_subject = subject["id"] if subject else None
+        st.session_state._nav_from_button = True
+    # A card or pager sets nav and asks the next run to move the radio.
     # Do this before the radio widget exists. A real radio click already updated
-    # nav_radio, so it must not be overwritten here.
+    # its own key, so it must not be overwritten here.
     if st.session_state.pop("_nav_from_button", False):
-        st.session_state.nav_radio = st.session_state.nav
-    elif "nav_radio" not in st.session_state:
-        st.session_state.nav_radio = st.session_state.nav
+        st.session_state.pop("stream_radio", None)
+        if st.session_state.nav_stream is None:
+            st.session_state.pop("subject_radio", None)
+        else:
+            st.session_state.subject_radio = st.session_state.nav_subject or SUBJECT_INDEX
 
 
-def _on_radio() -> None:
-    st.session_state.nav = st.session_state.nav_radio
-    _set_query(st.session_state.nav)
+def _on_stream_radio() -> None:
+    st.session_state.nav_stream = st.session_state.stream_radio
+    st.session_state.nav_subject = None
+    st.session_state._nav_from_button = True
+    _sync_query()
+
+
+def _on_subject_radio() -> None:
+    chosen = st.session_state.subject_radio
+    st.session_state.nav_subject = None if chosen == SUBJECT_INDEX else chosen
+    _sync_query()
+
+
+def _open_home() -> None:
+    st.session_state.nav_stream = None
+    st.session_state.nav_subject = None
+    st.session_state._nav_from_button = True
+    _sync_query()
+    st.rerun()
+
+
+def _open_stream(stream_id: str) -> None:
+    st.session_state.nav_stream = stream_id
+    st.session_state.nav_subject = None
+    st.session_state._nav_from_button = True
+    _sync_query()
+    st.rerun()
 
 
 def _open_subject(subject_id: str) -> None:
-    st.session_state.nav = subject_id
+    stream = content.stream_for_subject(subject_id)
+    if stream is not None:
+        st.session_state.nav_stream = stream["id"]
+    st.session_state.nav_subject = subject_id
     st.session_state._nav_from_button = True
-    _set_query(subject_id)
+    _sync_query()
     st.rerun()
 
 
@@ -214,7 +247,8 @@ def _header(page: dict) -> None:
     st.title(page["title"])
     st.markdown(f'<p class="subtitle">{_html(page["subtitle"])}</p>', unsafe_allow_html=True)
     st.markdown(f'<p class="meta">{_html(page["meta"])}</p>', unsafe_allow_html=True)
-    st.link_button(page["watch_label"], page["watch_url"])
+    if page.get("watch_url"):
+        st.link_button(page["watch_label"], page["watch_url"])
     st.markdown(f'<p class="banner">{_html(page["banner"])}</p>', unsafe_allow_html=True)
 
 
@@ -237,25 +271,37 @@ def _notes(page: dict) -> None:
     st.markdown(f'<p class="disclaimer">{_html(page["disclaimer"])}</p>', unsafe_allow_html=True)
 
 
-def _render_index() -> None:
-    page = content.INDEX
+def _render_home() -> None:
+    page = content.HOME
     _header(page)
     _summary(page)
+    st.markdown('<p class="kicker">直播</p>', unsafe_allow_html=True)
+    for stream in content.STREAMS:
+        with st.container(border=True):
+            st.markdown(f'<p class="when">{_html(stream["date_label"])}</p>', unsafe_allow_html=True)
+            st.subheader(stream["title"])
+            st.markdown(stream["card"])
+            if st.button("睇呢場科目", key=f"open-stream-{stream['id']}"):
+                _open_stream(stream["id"])
+    _notes(page)
+    st.caption("同一資料夾嘅 index.html 係直播目錄，可以離線打開。直播連結需要上網。")
+
+
+def _render_stream(stream: dict) -> None:
+    _header(stream)
+    _summary(stream)
     st.markdown('<p class="kicker">科目</p>', unsafe_allow_html=True)
-    for subject in content.SUBJECTS:
+    for subject in stream["subjects"]:
         with st.container(border=True):
             st.markdown(f'<p class="when">{_html(subject["when"])}</p>', unsafe_allow_html=True)
             st.subheader(subject["nav"])
             st.markdown(subject["card"])
             if st.button("閱讀呢科", key=f"open-{subject['id']}"):
                 _open_subject(subject["id"])
-    if not content.SECOND_HALF:
-        st.markdown(
-            f'<p class="later">{_html(page["later_note"])}</p>',
-            unsafe_allow_html=True,
-        )
-    _notes(page)
-    st.caption("開播時間 2026年11月4日 22:26（台北時間）。直播連結需要上網。同一資料夾嘅 index.html 仍然可以離線打開。")
+    _notes(stream)
+    if st.button("返回直播目錄", key=f"back-home-{stream['id']}"):
+        _open_home()
+    st.caption("同一資料夾可以離線打開。直播連結需要上網。")
 
 
 def _chart_mode(subject_id: str, index: int, all_source: bool) -> str:
@@ -284,7 +330,14 @@ def _render_blocks(blocks: list[dict]) -> None:
                     f'{_html(line["en"])}</p>'
                 )
             note = block.get("note")
-            note_html = f'<p class="aside">{_html(note)}</p>' if note else ""
+            if note:
+                note_html = (
+                    '<p class="aside">'
+                    + "<br>".join(_html(part) for part in note.split("\n"))
+                    + "</p>"
+                )
+            else:
+                note_html = ""
             st.markdown(
                 '<div class="quote">'
                 '<p class="section-label">原話</p>'
@@ -352,26 +405,71 @@ def _render_subject(subject: dict) -> None:
     st.caption("開播時間 2026年11月4日 22:26（台北時間）。直播連結需要上網。")
 
 
+def _subject_label(subject_id: str) -> str:
+    if subject_id == SUBJECT_INDEX:
+        return "科目目錄"
+    subject = content.subject_by_id(subject_id)
+    assert subject is not None
+    return f"{subject['when']}  {subject['pager_name']}"
+
+
 def _pager(subject: dict) -> None:
-    index = next(i for i, item in enumerate(content.SUBJECTS) if item["id"] == subject["id"])
-    prev_subject = content.SUBJECTS[index - 1] if index > 0 else None
-    next_subject = content.SUBJECTS[index + 1] if index + 1 < len(content.SUBJECTS) else None
+    stream = content.stream_for_subject(subject["id"])
+    subjects = stream["subjects"] if stream else content.SUBJECTS
+    index = next(i for i, item in enumerate(subjects) if item["id"] == subject["id"])
+    prev_subject = subjects[index - 1] if index > 0 else None
+    next_subject = subjects[index + 1] if index + 1 < len(subjects) else None
     left, mid, right = st.columns(3)
     if prev_subject is None:
         left.caption("呢個係第一科")
     elif left.button(f"← 上一科：{prev_subject['pager_name']}", key=f"prev-{subject['id']}"):
         _open_subject(prev_subject["id"])
     if mid.button("科目目錄", key=f"home-{subject['id']}"):
-        _open_subject(INDEX_ID)
+        if stream is None:
+            _open_home()
+        else:
+            _open_stream(stream["id"])
     if next_subject is None:
         right.caption("呢個係最後一科")
     elif right.button(f"下一科：{next_subject['pager_name']} →", key=f"next-{subject['id']}"):
         _open_subject(next_subject["id"])
 
 
+def _sidebar(stream: dict | None) -> None:
+    st.sidebar.caption("教育拆解，唔係投資建議。")
+    if stream is None:
+        st.sidebar.markdown("**直播目錄**")
+        st.sidebar.caption("先揀一場直播嘅日期。")
+        st.sidebar.radio(
+            "直播",
+            [item["id"] for item in content.STREAMS],
+            format_func=lambda stream_id: (
+                f"{content.stream_by_id(stream_id)['date_label']}  "
+                f"{content.stream_by_id(stream_id)['title']}"
+            ),
+            index=None,
+            key="stream_radio",
+            on_change=_on_stream_radio,
+        )
+        return
+    st.sidebar.markdown(f"**{stream['date_label']}**")
+    st.sidebar.caption(stream["title"])
+    if st.sidebar.button("返回直播目錄", key="sidebar-home"):
+        _open_home()
+    st.sidebar.radio(
+        "科目",
+        [SUBJECT_INDEX] + [subject["id"] for subject in stream["subjects"]],
+        format_func=_subject_label,
+        key="subject_radio",
+        on_change=_on_subject_radio,
+    )
+    if stream.get("watch_url"):
+        st.sidebar.link_button("打開直播重播", stream["watch_url"], width="stretch")
+
+
 def main() -> None:
     st.set_page_config(
-        page_title="《Flipped long》頭 30 分鐘",
+        page_title="技術分析科目",
         layout="wide",
         initial_sidebar_state="expanded",
     )
@@ -380,29 +478,16 @@ def main() -> None:
     if missing:
         st.error("缺圖：" + "、".join(missing))
     _init_nav()
-    st.sidebar.markdown("**《Flipped long》**")
-    st.sidebar.caption("頭 30 分鐘 · Martin Luk · 2026年11月4日")
-    st.sidebar.caption("教育拆解，唔係投資建議。")
-    st.sidebar.radio(
-        "科目",
-        _ids(),
-        format_func=_label,
-        key="nav_radio",
-        on_change=_on_radio,
-    )
-    st.sidebar.link_button("打開直播重播", content.YOUTUBE, width="stretch")
-    if not content.SECOND_HALF:
-        st.sidebar.caption(content.INDEX["later_note"])
-
-    current = st.session_state.nav_radio
-    if current == INDEX_ID:
-        _render_index()
+    stream = content.stream_by_id(st.session_state.nav_stream) if st.session_state.nav_stream else None
+    _sidebar(stream)
+    if stream is None:
+        _render_home()
+        return
+    subject = content.subject_by_id(st.session_state.nav_subject) if st.session_state.nav_subject else None
+    if subject is None:
+        _render_stream(stream)
     else:
-        subject = content.subject_by_id(current)
-        if subject is None:
-            _open_subject(INDEX_ID)
-        else:
-            _render_subject(subject)
+        _render_subject(subject)
 
 
 main()
