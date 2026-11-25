@@ -402,7 +402,9 @@ def _render_subject(subject: dict) -> None:
         _render_chart(subject["id"], index, chart, st.session_state[flag])
     _notes(subject)
     _pager(subject)
-    st.caption("開播時間 2026年11月4日 22:26（台北時間）。直播連結需要上網。")
+    stream = content.stream_for_subject(subject["id"])
+    aired = (stream or {}).get("footer_time") or "開播時間 2026年11月4日 22:26（台北時間）。"
+    st.caption(f"{aired}直播連結需要上網。")
 
 
 def _subject_label(subject_id: str) -> str:
