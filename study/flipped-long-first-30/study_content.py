@@ -1,14 +1,17 @@
-"""Teaching content for the Flipped long study app.
+"""Teaching content for the study app.
 
 Text is copied from the static HTML pages in this folder. Do not add fill
-prices, size, or P&L. FIRST_HALF is the opening 30 minutes. SECOND_HALF is
-30:00 through the end of the 4 Nov 2026 stream. Each subject uses the same
-keys.
+prices, size, or P&L. FIRST_HALF is the opening 30 minutes of the 4 Nov 2026
+stream. SECOND_HALF is 30:00 through the end of that stream. The 3 Nov 2026
+stream lives in stream_2026_11_03.py and is listed in STREAMS. Each subject
+uses the same keys.
 """
 
 from __future__ import annotations
 
 from pathlib import Path
+
+from stream_2026_11_03 import STREAM as STREAM_2026_11_03
 
 YOUTUBE = "https://www.youtube.com/watch?v=NUT6d6Hvbmw"
 
@@ -22,7 +25,7 @@ HOME = {
     "summary_kicker": "概要",
     "summary_title": "按直播日期入去",
     "summary": [
-        "先揀一場直播嘅日期，再睇嗰一場嘅科目。科目按時間順序排。而家收錄 2026年11月4日《Flipped long》。之後再加其他直播，只會喺呢度多一個日期，唔會把所有科目一次過列晒出嚟。",
+        "先揀一場直播嘅日期，再睇嗰一場嘅科目。科目按時間順序排。而家收錄 2026年11月4日《Flipped long》，同 2026年11月3日《Adding shorts again》。之後再加其他直播，只會喺呢度多一個日期，唔會把所有科目一次過列晒出嚟。",
     ],
     "notes_title": "注意事項",
     "notes": [
@@ -1489,6 +1492,7 @@ STREAMS: list[dict] = [
         "watch_url": YOUTUBE,
         "banner": "呢份係教育拆解，方便之後 review 點樣用形態、位置同均線讀圖，唔係投資建議。",
         "card": "由開場到完結，有讀圖嘅段落按時間順序排。",
+        "footer_time": "開播時間 2026年11月4日 22:26（台北時間）。",
         "summary_kicker": "概要",
         "summary_title": "呢一場可以學嘅技術分析",
         "summary": [
@@ -1505,13 +1509,15 @@ STREAMS: list[dict] = [
         "disclaimer": "免責聲明：呢份係教育拆解，方便之後 review 讀圖方法，唔係投資建議，亦唔好當作買賣指示。",
         "subjects": SUBJECTS,
     },
+    STREAM_2026_11_03,
 ]
 
 
 def subject_by_id(subject_id: str) -> dict | None:
-    for subject in SUBJECTS:
-        if subject["id"] == subject_id:
-            return subject
+    for stream in STREAMS:
+        for subject in stream["subjects"]:
+            if subject["id"] == subject_id:
+                return subject
     return None
 
 
@@ -1532,10 +1538,11 @@ def stream_for_subject(subject_id: str) -> dict | None:
 
 def image_rels() -> list[str]:
     rels: list[str] = []
-    for subject in SUBJECTS:
-        for chart in subject["charts"]:
-            rels.append(chart["annotated"])
-            rels.append(chart["source"])
+    for stream in STREAMS:
+        for subject in stream["subjects"]:
+            for chart in subject["charts"]:
+                rels.append(chart["annotated"])
+                rels.append(chart["source"])
     return rels
 
 
