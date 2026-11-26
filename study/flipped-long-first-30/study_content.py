@@ -3,14 +3,16 @@
 Text is copied from the static HTML pages in this folder. Do not add fill
 prices, size, or P&L. FIRST_HALF is the opening 30 minutes of the 4 Nov 2026
 stream. SECOND_HALF is 30:00 through the end of that stream. The 3 Nov 2026
-stream lives in stream_2026_11_03.py and is listed in STREAMS. Each subject
-uses the same keys.
+stream lives in stream_2026_11_03.py, and the 2 Nov 2026 stream lives in
+stream_2026_11_02.py. All three are listed in STREAMS, newest first. Each
+subject uses the same keys.
 """
 
 from __future__ import annotations
 
 from pathlib import Path
 
+from stream_2026_11_02 import STREAM as STREAM_2026_11_02
 from stream_2026_11_03 import STREAM as STREAM_2026_11_03
 
 YOUTUBE = "https://www.youtube.com/watch?v=NUT6d6Hvbmw"
@@ -25,7 +27,7 @@ HOME = {
     "summary_kicker": "概要",
     "summary_title": "按直播日期入去",
     "summary": [
-        "先揀一場直播嘅日期，再睇嗰一場嘅科目。科目按時間順序排。而家收錄 2026年11月4日《Flipped long》，同 2026年11月3日《Adding shorts again》。之後再加其他直播，只會喺呢度多一個日期，唔會把所有科目一次過列晒出嚟。",
+        "先揀一場直播嘅日期，再睇嗰一場嘅科目。科目按時間順序排。而家收錄 2026年11月4日《Flipped long》、2026年11月3日《Adding shorts again》，同 2026年11月2日《DRAM fat finger》。之後再加其他直播，只會喺呢度多一個日期，唔會把所有科目一次過列晒出嚟。",
     ],
     "notes_title": "注意事項",
     "notes": [
@@ -1492,7 +1494,6 @@ STREAMS: list[dict] = [
         "watch_url": YOUTUBE,
         "banner": "呢份係教育拆解，方便之後 review 點樣用形態、位置同均線讀圖，唔係投資建議。",
         "card": "由開場到完結，有讀圖嘅段落按時間順序排。",
-        "footer_time": "開播時間 2026年11月4日 22:26（台北時間）。",
         "summary_kicker": "概要",
         "summary_title": "呢一場可以學嘅技術分析",
         "summary": [
@@ -1510,6 +1511,7 @@ STREAMS: list[dict] = [
         "subjects": SUBJECTS,
     },
     STREAM_2026_11_03,
+    STREAM_2026_11_02,
 ]
 
 

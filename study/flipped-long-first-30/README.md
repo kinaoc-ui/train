@@ -8,7 +8,7 @@ Clone 或下載之後，用瀏覽器打開 `study/flipped-long-first-30/index.ht
 
 ## Streamlit
 
-教學內容同靜態版相同。第一屏係直播目錄，按日期揀一場；而家有 2026年11月4日《Flipped long》，同 2026年11月3日《Adding shorts again》，最新日期排前。入去之後先至係嗰一場嘅科目，按時間順序一齊列，唔分組。圖用呢個資料夾入面現有嘅註解圖同原畫面。`study_content.py` 用 `STREAMS` 加新日期；11月4日嘅科目仍然由 `FIRST_HALF` 同 `SECOND_HALF` 拼出，11月3日嘅科目喺 `stream_2026_11_03.py`。
+教學內容同靜態版相同。第一屏係直播目錄，按日期揀一場；而家有 2026年11月4日《Flipped long》、2026年11月3日《Adding shorts again》，同 2026年11月2日《DRAM fat finger》，最新日期排前。入去之後先至係嗰一場嘅科目，按時間順序一齊列，唔分組。圖用呢個資料夾入面現有嘅註解圖同原畫面。`study_content.py` 用 `STREAMS` 加新日期；11月4日嘅科目仍然由 `FIRST_HALF` 同 `SECOND_HALF` 拼出，11月3日嘅科目喺 `stream_2026_11_03.py`，11月2日嘅科目喺 `stream_2026_11_02.py`。
 
 本機（喺 repo 根目錄）：
 
@@ -34,7 +34,8 @@ App URL 由 Community Cloud 喺 deploy 時先定，空白 subdomain 會變成 `h
 
 - Martin Luk《Flipped long》，2026年11月4日（約 1:04:14）
 - Martin Luk《Adding shorts again》，2026年11月3日（約 2:35:48）
-- 本站收錄呢兩場入面有技術分析嘅段落
+- Martin Luk《DRAM fat finger》，2026年11月2日（約 2:23:38）
+- 本站收錄呢三場入面有技術分析嘅段落
 - 圖上中文註解係之後加上嘅讀圖說明，可用「原畫面」對返未加字嘅截圖
 - 呢份係教育拆解，唔係投資建議
 
@@ -43,6 +44,7 @@ App URL 由 Community Cloud 喺 deploy 時先定，空白 subdomain 會變成 `h
 - `index.html` — 直播目錄。先揀日期，最新排前。
 - `2026-11-04.html` — 2026年11月4日《Flipped long》嘅科目，按時間順序。
 - `2026-11-03.html` — 2026年11月3日《Adding shorts again》嘅科目，按時間順序。
+- `2026-11-02.html` — 2026年11月2日《DRAM fat finger》嘅科目，按時間順序。
 
 ## 科目（2026年11月4日，按時間）
 
@@ -81,14 +83,42 @@ App URL 由 Community Cloud 喺 deploy 時先定，空白 subdomain 會變成 `h
 17. `avwap.html` — Anchor VWAP 跨週期，SK Hynix IPO 為例（2:21:58–2:28:50）
 18. `sndk-coin.html` — 平倉：SNDK 同 COIN，淡倉傾向喺弱勢／低開平（2:29:51–2:31:49）
 
+## 科目（2026年11月2日，按時間）
+
+1. `leader-scan.html` — 週末 leader scan 同領先板塊（05:08–15:17）
+2. `crwd-potential.html` — Tesla、Crowd 做多要等大市再延伸（16:05–17:58）
+3. `soxx-gap-ups.html` — 半導體淡倉：三日裂口入下降均線（21:15–23:31）
+4. `soxx-thursday.html` — 週四半導體淡倉：等彈入缺口同小時 9（23:37–27:38）
+5. `usoil-cover.html` — 原油急跌：已到 21，等反彈再走（28:28–30:22）
+6. `goog-indices.html` — GOOG 超賣，但指數未夠延伸（33:00–36:56）
+7. `why-this-dip.html` — 點解今次同早前回調唔同（37:35–49:12）
+8. `profit-taking.html` — 平倉：COIN、半導體同 memory（49:35–51:05）
+9. `weekly-50-shorts.html` — 仲在週線 50 之上，淡倉唔想擺太長（52:47–56:13）
+10. `dram-fat-finger.html` — DRAM fat finger：誤用賣出止蝕（1:00:26–1:06:18）
+11. `sedg-fslr.html` — 太陽能：較想淡近週線 9（1:07:27–1:08:18）
+12. `spcx-swing.html` — SPCX 或會擺耐少少，但仍怕 V 型反彈（1:10:12–1:11:41）
+13. `xag-xau.html` — 金銀：銀已到週線 150，金仍在上面（1:12:10–1:14:32）
+14. `defensive-extended.html` — 防守板塊向上有少少延伸（1:16:53–1:17:57）
+15. `uvxy-aggressive.html` — UVXY 理論上可做多，但太進取（1:19:32–1:19:48）
+16. `tsla-fcp.html` — Tesla 多年底：要等回落到匯合均線（1:20:16–1:21:28）
+17. `nvda-weekly-50.html` — NVDA 偏弱，做多要小心週線 50（1:27:01–1:28:54）
+18. `btc-hold-21.html` — Bitcoin：守得住週線 21 先考慮做多（1:52:34–1:54:13）
+19. `lite-failed.html` — LITE：失敗突破後行向 150 之下（2:08:31–2:09:32）
+20. `afrm-breakout.html` — AFRM：日線同週線突破都整齊（2:10:27–2:10:43）
+21. `hold-shorts.html` — 強彈入未補缺口，但仍會持有淡倉（2:17:20–2:18:26）
+22. `usoil-exit.html` — 原油：或等小時 9 反抽，否則彈就賣（2:18:29–2:19:54）
+23. `hynix-bounce.html` — SK hynix 可淡，但大市已有少少延伸（2:20:25–2:23:28）
+
 ## 資料夾
 
 - `index.html` — 直播目錄（離線入口，先揀日期）
 - `2026-11-04.html` — 2026年11月4日《Flipped long》嘅科目目錄
 - `2026-11-03.html` — 2026年11月3日《Adding shorts again》嘅科目目錄
+- `2026-11-02.html` — 2026年11月2日《DRAM fat finger》嘅科目目錄
 - `streamlit_app.py` — Community Cloud 入口
-- `study_content.py` — Streamlit 用嘅科目內容。`STREAMS` 係日期目錄（最新排前）；11月4日科目由 `FIRST_HALF` 同 `SECOND_HALF` 拼成一條時間順序，11月3日科目喺 `stream_2026_11_03.py`
+- `study_content.py` — Streamlit 用嘅科目內容。`STREAMS` 係日期目錄（最新排前）；11月4日科目由 `FIRST_HALF` 同 `SECOND_HALF` 拼成一條時間順序，11月3日科目喺 `stream_2026_11_03.py`，11月2日科目喺 `stream_2026_11_02.py`
 - `stream_2026_11_03.py` — 2026年11月3日《Adding shorts again》嘅科目內容
+- `stream_2026_11_02.py` — 2026年11月2日《DRAM fat finger》嘅科目內容
 - `requirements.txt` — `streamlit==1.67.0`
 - `.streamlit/config.toml` — 深色主題（跟 entrypoint，優先於 repo 根目錄設定）
 - `styles.css`、`script.js` — 靜態版
