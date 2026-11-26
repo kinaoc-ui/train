@@ -8,7 +8,7 @@ Clone 或下載之後，用瀏覽器打開 `study/flipped-long-first-30/index.ht
 
 ## Streamlit
 
-教學內容同靜態版相同。第一屏係直播目錄，按日期揀一場；而家有 2026年11月4日《Flipped long》、2026年11月3日《Adding shorts again》，同 2026年11月2日《DRAM fat finger》，最新日期排前。入去之後先至係嗰一場嘅科目，按時間順序一齊列，唔分組。圖用呢個資料夾入面現有嘅註解圖同原畫面。`study_content.py` 用 `STREAMS` 加新日期；11月4日嘅科目仍然由 `FIRST_HALF` 同 `SECOND_HALF` 拼出，11月3日嘅科目喺 `stream_2026_11_03.py`，11月2日嘅科目喺 `stream_2026_11_02.py`。
+教學內容同靜態版相同。第一屏係直播目錄，按日期揀一場；而家有 2026年11月4日《Flipped long》、2026年11月3日《Adding shorts again》、2026年11月2日《DRAM fat finger》，同 2026年10月28日《SOXX short》，最新日期排前。入去之後先至係嗰一場嘅科目，按時間順序一齊列，唔分組。圖用呢個資料夾入面現有嘅註解圖同原畫面。`study_content.py` 用 `STREAMS` 加新日期；11月4日嘅科目仍然由 `FIRST_HALF` 同 `SECOND_HALF` 拼出，11月3日嘅科目喺 `stream_2026_11_03.py`，11月2日嘅科目喺 `stream_2026_11_02.py`，10月28日嘅科目喺 `stream_2026_10_28.py`。
 
 本機（喺 repo 根目錄）：
 
@@ -35,7 +35,8 @@ App URL 由 Community Cloud 喺 deploy 時先定，空白 subdomain 會變成 `h
 - Martin Luk《Flipped long》，2026年11月4日（約 1:04:14）
 - Martin Luk《Adding shorts again》，2026年11月3日（約 2:35:48）
 - Martin Luk《DRAM fat finger》，2026年11月2日（約 2:23:38）
-- 本站收錄呢三場入面有技術分析嘅段落
+- Martin Luk《SOXX short》，2026年10月28日（約 1:28:18）
+- 本站收錄呢四場入面有技術分析嘅段落
 - 圖上中文註解係之後加上嘅讀圖說明，可用「原畫面」對返未加字嘅截圖
 - 呢份係教育拆解，唔係投資建議
 
@@ -45,6 +46,7 @@ App URL 由 Community Cloud 喺 deploy 時先定，空白 subdomain 會變成 `h
 - `2026-11-04.html` — 2026年11月4日《Flipped long》嘅科目，按時間順序。
 - `2026-11-03.html` — 2026年11月3日《Adding shorts again》嘅科目，按時間順序。
 - `2026-11-02.html` — 2026年11月2日《DRAM fat finger》嘅科目，按時間順序。
+- `2026-10-28.html` — 2026年10月28日《SOXX short》嘅科目，按時間順序。
 
 ## 科目（2026年11月4日，按時間）
 
@@ -109,16 +111,35 @@ App URL 由 Community Cloud 喺 deploy 時先定，空白 subdomain 會變成 `h
 22. `usoil-exit.html` — 原油：或等小時 9 反抽，否則彈就賣（2:18:29–2:19:54）
 23. `hynix-bounce.html` — SK hynix 可淡，但大市已有少少延伸（2:20:25–2:23:28）
 
+
+## 科目（2026年10月28日，按時間）
+
+1. `cover-uvxy-sndk-gev.html` — 平咗 UVXY、SNDK 同 GEV（07:11–08:24）
+2. `vrt-gap-50.html` — VRT 裂口升入 50 EMA（08:24–08:38 · 其後 10:49、35:23）
+3. `dram-semis-under.html` — Memory 彈入週線均線；半導體仍在 50、21 之下（08:39–09:13）
+4. `uvxy-follow-through.html` — UVXY 向下跟進，之後想再做卻冇購買力（19:21–20:15 · 其後 28:00）
+5. `why-short-soxx.html` — 點解淡 SOXX：缺口、細旗同週線均線（24:59–27:40）
+6. `soxx-weekly-resistance.html` — 今日淡 SOXX 好過週一週二（28:58–33:00）
+7. `spcx-weakness-avwap.html` — SPCX 相對弱勢，之後再入錨定 VWAP（30:08–30:42 · 其後 1:04:27）
+8. `bounce-higher-shorts.html` — 急彈：愈高愈想淡；UVXY 若入場會即停（38:25–39:45）
+9. `soxx-upthrust.html` — SOXX 假突破後再入：1 分鐘收市低過 9（1:02:27–1:04:27）
+10. `hold-declining-9.html` — 點解昨日唔全部平倉：未破下降 9（1:12:40–1:14:48）
+11. `traction-gap-chop.html` — 冇 traction：裂口後橫行同寬幅上落（1:14:48–1:17:37）
+12. `rules-vs-judgment.html` — 點解唔把規則交俾 AI（1:17:37–1:26:18）
+13. `let-stops-work.html` — 收結：交俾止蝕；最差係強勢收市再準備做多（1:26:28–1:28:18）
+
 ## 資料夾
 
 - `index.html` — 直播目錄（離線入口，先揀日期）
 - `2026-11-04.html` — 2026年11月4日《Flipped long》嘅科目目錄
 - `2026-11-03.html` — 2026年11月3日《Adding shorts again》嘅科目目錄
 - `2026-11-02.html` — 2026年11月2日《DRAM fat finger》嘅科目目錄
+- `2026-10-28.html` — 2026年10月28日《SOXX short》嘅科目目錄
 - `streamlit_app.py` — Community Cloud 入口
-- `study_content.py` — Streamlit 用嘅科目內容。`STREAMS` 係日期目錄（最新排前）；11月4日科目由 `FIRST_HALF` 同 `SECOND_HALF` 拼成一條時間順序，11月3日科目喺 `stream_2026_11_03.py`，11月2日科目喺 `stream_2026_11_02.py`
+- `study_content.py` — Streamlit 用嘅科目內容。`STREAMS` 係日期目錄（最新排前）；11月4日科目由 `FIRST_HALF` 同 `SECOND_HALF` 拼成一條時間順序，11月3日科目喺 `stream_2026_11_03.py`，11月2日科目喺 `stream_2026_11_02.py`，10月28日科目喺 `stream_2026_10_28.py`
 - `stream_2026_11_03.py` — 2026年11月3日《Adding shorts again》嘅科目內容
 - `stream_2026_11_02.py` — 2026年11月2日《DRAM fat finger》嘅科目內容
+- `stream_2026_10_28.py` — 2026年10月28日《SOXX short》嘅科目內容
 - `requirements.txt` — `streamlit==1.67.0`
 - `.streamlit/config.toml` — 深色主題（跟 entrypoint，優先於 repo 根目錄設定）
 - `styles.css`、`script.js` — 靜態版

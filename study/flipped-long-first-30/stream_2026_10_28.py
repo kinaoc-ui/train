@@ -1,0 +1,1146 @@
+#!/usr/bin/env python3
+"""Study content for SOXX short | 28 Oct 2026."""
+
+from __future__ import annotations
+
+BANNER = "呢份係教育拆解，方便之後 review 形態同位置嘅讀法，唔係投資建議。"
+DISCLAIMER = "免責聲明：呢份係教育拆解，唔係投資建議，亦唔好當作買賣指示。"
+YT = "https://www.youtube.com/watch?v=iMBI3ZcQ6sU"
+DATE = "2026年10月28日"
+STREAM_TITLE = "《SOXX short》"
+
+
+def _meta(when: str) -> str:
+    return f"Martin Luk · {STREAM_TITLE} · {DATE} · 時間碼 {when}"
+
+
+def q(meta, en, yc, note=None):
+    b = {"kind": "quote", "lines": [{"meta": meta, "en": en}], "yc": yc}
+    if note:
+        b["note"] = note
+    return b
+
+
+def r(*paragraphs):
+    return {"kind": "read", "paragraphs": list(paragraphs)}
+
+
+def chart(anchor, toc, kicker, title, time, annotated, source, caption, alt_a, alt_s, blocks):
+    if "點圖可放大" not in caption:
+        caption = caption.rstrip("。") + "。 點圖可放大。"
+    return {
+        "anchor": anchor,
+        "toc": toc,
+        "kicker": kicker,
+        "title": title,
+        "time": time,
+        "annotated": annotated,
+        "source": source,
+        "caption": caption,
+        "alt_annotated": alt_a,
+        "alt_source": alt_s,
+        "blocks": blocks,
+    }
+
+
+SUBJECTS: list[dict] = [
+
+    {
+        "id": "cover-uvxy-sndk-gev",
+        "pager_name": "平咗 UVXY、SNDK 同 GEV",
+        "when": "07:11–08:24",
+        "nav": "平咗 UVXY、SNDK 同 GEV",
+        "eyebrow": "科目一",
+        "title": "平咗 UVXY、SNDK 同 GEV",
+        "subtitle": "大市未見轉弱，又要避開 SK Hynix 業績波動",
+        "meta": _meta("07:11–08:24"),
+        "watch_label": "由 07:11 觀看直播片段",
+        "watch_url": f"{YT}&t=431s",
+        "banner": BANNER,
+        "description": "Martin Luk 直播拆解：因大市未見轉弱而平 UVXY，並在 SK Hynix 業績前拆走 SNDK 淡倉同已顯極強嘅 GEV。教育用途。",
+        "summary_kicker": "概要",
+        "summary_title": "開場先交代昨日同今日開市前拆走嘅倉",
+        "summary": [
+            "07:11 開始，佢話昨日平咗 UVXY，因為大市未見弱勢或者逆轉。跟住提到今日有 SK Hynix 業績，預期波動可以好大，而自己昨日淡倉已經偏重，所以把 SNDK 淡倉拆走。GEV 昨日全日展現極強勢，同樣喺今日業績前平咗。講完 GEV 嗰陣，畫面見到佢裂口向下。",
+            "字幕把 SNDK 聽成 sntk 或者 SK short；以畫面 Sandisk（SNDK）為準。圖例冇印均線週期。",
+        ],
+        "card": "昨日因大市未見轉弱而平 UVXY。今日 SK Hynix 業績前拆走 SNDK 淡倉，亦平咗昨日極強嘅 GEV；畫面見到 GEV 裂口向下。",
+        "charts": [
+            chart(
+                "chart-qqq-0715", "QQQ 日線 07:15", "圖一",
+                "QQQ 日線：大市未見轉弱或逆轉",
+                "直播 07:15",
+                "images/cover-uvxy-sndk-gev/01_qqq_daily_0715.jpg",
+                "images/cover-uvxy-sndk-gev/src_01_qqq_daily_0715.jpg",
+                "圖一 · QQQ 日線 · 直播 07:15。註解標示大市未見轉弱，以及近期只係彈起、唔等於已宣佈轉勢。",
+                "加咗註解嘅 QQQ 日線：標示未見轉弱，以及近期彈起。",
+                "直播原畫面：QQQ 日線，未加註解。",
+                [
+                    q(
+                        "07:11–07:23 · 機器轉寫，標點為閱讀而加；主要跟 faster-whisper large-v3-turbo float32，並對照 YouTube en-orig",
+                        "So yesterday I sold my UVXY, as the market is just not showing any sign of weakness or reversal.",
+                        "所以昨日我平咗 UVXY，因為大市就係未見任何弱勢或者逆轉跡象。",
+                    ),
+                    r(
+                        "呢一步係先讀大市，再解釋點解平 UVXY。原話只係「未見弱勢或逆轉」，冇講轉勢已經成立。",
+                        "畫面係 QQQ 日線，近期有彈起，但仍要同後面半導體、memory 一齊睇，唔好單獨當成買入訊號。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-sndk-0745", "SNDK 日線 07:45", "圖二",
+                "SNDK：因為 SK Hynix 業績而拆淡倉",
+                "直播 07:45",
+                "images/cover-uvxy-sndk-gev/02_sndk_daily_0745.jpg",
+                "images/cover-uvxy-sndk-gev/src_02_sndk_daily_0745.jpg",
+                "圖二 · SNDK 日線 · 直播 07:45。註解標示因 SK Hynix 業績預期高波動而拆淡倉，以及價格仍在下降均線附近。",
+                "加咗註解嘅 SNDK 日線：標示因業績波動拆淡倉。",
+                "直播原畫面：SNDK 日線，未加註解。",
+                [
+                    q(
+                        "07:23–07:52 · 機器轉寫，標點為閱讀而加",
+                        "And I realized today we got SK Hynix earnings, so I also took the SNDK short out, because I think there could be a very high volatility on the SK Hynix earnings, as I am pretty heavily shorted yesterday.",
+                        "我又意識到今日有 SK Hynix 業績，所以亦把 SNDK 淡倉拆走，因為我覺得 SK Hynix 業績可以有好高波動，而我昨日淡倉已經偏重。",
+                        "Whisper 把 SNDK 聽成 sntk；YouTube 字幕寫成 SK short out。畫面係 Sandisk Corporation（SNDK），以畫面為準。",
+                    ),
+                    r(
+                        "拆倉理由係業績波動同整體淡倉已經偏重，唔係因為呢隻已經跌完。",
+                        "畫面標題寫住 Sandisk Corporation，只當圖上文字。圖例冇印均線週期。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-gev-0812", "GEV 日線 08:12", "圖三",
+                "GEV：昨日極強，今日業績前已平；畫面裂口向下",
+                "直播 08:12",
+                "images/cover-uvxy-sndk-gev/03_gev_daily_0812.jpg",
+                "images/cover-uvxy-sndk-gev/src_03_gev_daily_0812.jpg",
+                "圖三 · GEV 日線 · 直播 08:12。註解標示昨日展現極強勢所以預先平倉，以及盤前見到裂口向下。",
+                "加咗註解嘅 GEV 日線：標示昨日強勢同盤前裂口向下。",
+                "直播原畫面：GEV 日線，未加註解。",
+                [
+                    q(
+                        "07:52–08:24 · 機器轉寫，標點為閱讀而加",
+                        "And GEV as well — yesterday is also just showing immense strength throughout the day, so I just closed it before today's earnings with these. And it looks like it's gapping down.",
+                        "GEV 都係。昨日全日都展現極強勢，所以我喺今日業績前，連同呢啲倉一齊平咗。而家睇落係裂口向下。",
+                    ),
+                    r(
+                        "原話把 GEV 同前面業績風險放在同一段：昨日太強，先走，之後先見到裂口向下。",
+                        "「gapping down」之後，對白即刻接到 VRT 裂口向上，見下一科。畫面標題 GE Vernova Inc. 只當圖上文字。",
+                    ),
+                ],
+            ),
+        ],
+        "notes_title": "注意事項",
+        "notes": [
+            "開場 03:12–07:10 係問候同網絡警告，冇獨立讀圖，唔單獨成科。",
+            "畫面睇唔到成交價、倉位大細或者損益，所以唔寫死呢啲數字。",
+        ],
+        "disclaimer": DISCLAIMER,
+    },
+
+    {
+        "id": "vrt-gap-50",
+        "pager_name": "VRT 裂口升入 50 EMA",
+        "when": "08:24–08:38 · 其後 10:49、35:23",
+        "nav": "VRT 裂口升入 50 EMA",
+        "eyebrow": "科目二",
+        "title": "VRT 裂口升入 50 EMA",
+        "subtitle": "想淡但 240 附近限價未成交；之後返上來已經夠晒淡倉曝險",
+        "meta": _meta("08:24–08:38 · 其後 10:49、35:23"),
+        "watch_label": "由 08:24 觀看直播片段",
+        "watch_url": f"{YT}&t=504s",
+        "banner": BANNER,
+        "description": "Martin Luk 直播拆解：VRT 裂口向上行入 50 EMA 同週線聚集均線，其後一分鐘升得太快令 240 限價未成交，稍後雖可淡但曝險已夠。教育用途。",
+        "summary_kicker": "概要",
+        "summary_title": "先見到裂口入均線，之後成交唔到，再之後唔再加倉",
+        "summary": [
+            "08:24 佢話 VRT 裂口向上，行入 50 EMA，亦對住週線聚集均線，覺得有少少想淡。約 10:49 至 12:11，一分鐘圖見到升得太快，口中 240 附近限價淡單未成交。35:23 再說 VRT 返上來，理論上可以淡，但今日淡倉曝險已經夠。",
+            "YouTube 把 10:49 之後一句聽成 futures；Whisper 聽成 frt。當時畫面係 VRT 一分鐘，以畫面為準。圖例冇印均線週期。口中 240 只保留原話，唔當可複製規則。",
+        ],
+        "card": "VRT 裂口向上行入 50 EMA 同週線聚集均線，想淡。之後一分鐘升得太快，240 附近限價未成交；稍後雖可淡，但曝險已夠。",
+        "charts": [
+            chart(
+                "chart-vrt-0826", "VRT 日線 08:26", "圖一",
+                "裂口向上，行入 50 EMA 同週線聚集均線",
+                "直播 08:26",
+                "images/vrt-gap-50/01_vrt_daily_0826.jpg",
+                "images/vrt-gap-50/src_01_vrt_daily_0826.jpg",
+                "圖一 · VRT 日線 · 直播 08:26。註解標示裂口向上行入 50 EMA，以及當時覺得有少少想淡。",
+                "加咗註解嘅 VRT 日線：標示裂口入均線。",
+                "直播原畫面：VRT 日線，未加註解。",
+                [
+                    q(
+                        "08:24–08:38 · 機器轉寫，標點為閱讀而加",
+                        "This VRT is gapping up into this 50 EMA, and also the weekly clustering EMAs too. I'm a little bit tempting to short this thing.",
+                        "呢隻 VRT 裂口向上，行入呢條 50 EMA，亦都對住週線聚集均線。我有少少想淡呢隻。",
+                        "YouTube 字幕寫 clustering；Whisper 聽成 bustering。按 YouTube 同語境改為 clustering。",
+                    ),
+                    r(
+                        "教學點係位置：裂口不是隨便追淡，而係行入日線 50 同週線聚集均線呢類阻力帶，先令佢心動。",
+                        "「有少少想淡」係當時想法，呢一段未講已成交。圖例冇印均線週期。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-vrt-1210", "VRT 1 分鐘 12:10", "圖二 · 其後",
+                "一分鐘升得太快，240 附近限價未成交",
+                "直播 12:10",
+                "images/vrt-gap-50/02_vrt_1m_1210.jpg",
+                "images/vrt-gap-50/src_02_vrt_1m_1210.jpg",
+                "圖二 · VRT 一分鐘 · 直播 12:10。註解標示急升同口中 240 附近限價未成交。",
+                "加咗註解嘅 VRT 一分鐘圖：標示急升同 240 附近。",
+                "直播原畫面：VRT 一分鐘圖，未加註解。",
+                [
+                    q(
+                        "10:49–12:11 · 機器轉寫，標點為閱讀而加",
+                        "But this VRT is moving so fast. I have a limit order at like the 240-ish, but I never got filled.",
+                        "但呢隻 VRT 行得太快。我喺大約 240 附近掛咗限價單，但一直未成交。",
+                        "YouTube 聽成 futures；Whisper 聽成 frt。10:42 前後先掃過 AXTI（有觀眾問業績前止蝕），之後畫面係 VRT。以畫面同「240-ish」為準。filled 按語境由 feel 更正。",
+                    ),
+                    r(
+                        "同一淡倉想法，執行上掛喺 240 附近，但一分鐘急升令單未成交。",
+                        "240 只係原話大約價位，唔寫成可複製嘅入場規則。前面 AXTI 觀眾提問只有一句「希望唔好低開」，唔單獨成科。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-vrt-3620", "VRT 日線 36:20", "圖三 · 其後",
+                "返上來可以淡，但今日曝險已經夠",
+                "直播 36:20",
+                "images/vrt-gap-50/03_vrt_daily_3620.jpg",
+                "images/vrt-gap-50/src_03_vrt_daily_3620.jpg",
+                "圖三 · VRT 日線 · 直播 36:20。註解標示價格返上來，以及雖然可淡但曝險已夠。",
+                "加咗註解嘅 VRT 日線：標示回升同不再加倉。",
+                "直播原畫面：VRT 日線，未加註解。",
+                [
+                    q(
+                        "35:23–36:24 · 機器轉寫，標點為閱讀而加",
+                        "VRT is coming back. I think right now I'm doing pretty good. But yeah, I think it could be a short, but I think I've already got enough short exposure today.",
+                        "VRT 返上來。我覺得而家自己做得幾好。係，我覺得佢可以係淡倉，但我覺得今日淡倉曝險已經夠。",
+                        "YouTube 把 VRT 聽成 PRT；Whisper 同畫面都係 VRT。",
+                    ),
+                    r(
+                        "後面呢一段係倉位管理：形態仲可以淡，但唔再加，因為今日已經有足夠淡倉。",
+                        "呢句唔等於否定早前嘅位置，只係話曝險已經夠。",
+                    ),
+                ],
+            ),
+        ],
+        "notes_title": "注意事項",
+        "notes": [
+            "畫面睇唔到限價有冇掛出、成交價或者損益，所以 240 只保留原話。",
+            "圖例冇印均線週期；50 EMA 同週線聚集均線以口中講法為準。",
+        ],
+        "disclaimer": DISCLAIMER,
+    },
+    {
+        "id": "dram-semis-under",
+        "pager_name": "Memory 彈入週線均線；半導體仍在 50、21 之下",
+        "when": "08:39–09:13",
+        "nav": "Memory 彈入週線；半導體仍在均線下",
+        "eyebrow": "科目三",
+        "title": "Memory 彈入週線均線；半導體仍在 50、21 之下",
+        "subtitle": "有強彈唔等於已經轉強；口中講 Qs 在 50，但畫面係 SPY",
+        "meta": _meta("08:39–09:13"),
+        "watch_label": "由 08:39 觀看直播片段",
+        "watch_url": f"{YT}&t=519s",
+        "banner": BANNER,
+        "description": "Martin Luk 直播拆解：memory 名稱彈入週線均線，半導體例子仍在 50 同 21 之下；口中講 Qs 在 50 EMA，但當時畫面係 SPY。教育用途。",
+        "summary_kicker": "概要",
+        "summary_title": "板塊有彈，但仍要睇均線位置",
+        "summary": [
+            "08:39 起，佢話 memory 名稱繼續向上行，而家彈入週線均線。半導體都有一啲彈得急，但仍喺 50、21 之下。跟住講 Qs 而家喺 50 EMA。",
+            "講 Qs 嗰陣，分頁同右側報價係 SPY，圖上卻寫住 Invesco QQQ Trust。本站以分頁同報價當作 SPY，並把名稱錯配標出。ALAB 畫面標題 Astera Labs 只當圖上文字。圖例冇印均線週期。",
+        ],
+        "card": "DRAM 週線彈入均線叢。半導體例子雖然彈得急，仍在 50、21 之下。口中講 Qs 在 50 EMA，但畫面係 SPY，圖上名稱仲誤寫 QQQ。",
+        "charts": [
+            chart(
+                "chart-dram-0840", "DRAM 週線 08:40", "圖一",
+                "Memory 週線：彈入均線聚集",
+                "直播 08:40",
+                "images/dram-semis-under/01_dram_weekly_0840.jpg",
+                "images/dram-semis-under/src_01_dram_weekly_0840.jpg",
+                "圖一 · DRAM 週線 · 直播 08:40。註解標示 memory 持續反彈，並彈入週線均線叢。",
+                "加咗註解嘅 DRAM 週線：標示彈入週線均線。",
+                "直播原畫面：DRAM 週線，未加註解。",
+                [
+                    q(
+                        "08:39–08:49 · 機器轉寫，標點為閱讀而加",
+                        "And memory names continues rallying higher. And now it's actually bouncing into the weekly EMAs.",
+                        "而且 memory 名稱繼續向上行。而家其實係彈入週線均線。",
+                    ),
+                    r(
+                        "重點係位置：唔係只講「升咗」，而係彈入週線均線聚集。",
+                        "畫面係 Roundhill Memory ETF（DRAM）。圖例冇印週期。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-alab-0900", "ALAB 日線 09:00", "圖二",
+                "半導體例子：彈得急，仍在 50、21 之下",
+                "直播 09:00",
+                "images/dram-semis-under/02_alab_daily_0900.jpg",
+                "images/dram-semis-under/src_02_alab_daily_0900.jpg",
+                "圖二 · ALAB 日線 · 直播 09:00。註解標示彈得急，但價格仍在口中嘅 50、21 之下。",
+                "加咗註解嘅 ALAB 日線：標示強彈仍在均線之下。",
+                "直播原畫面：ALAB 日線，未加註解。",
+                [
+                    q(
+                        "08:50–09:08 · 機器轉寫，標點為閱讀而加",
+                        "SEMI as well, although some of the SEMI names are bouncing pretty strongly, but I mean they're still staying under the 50, 21.",
+                        "半導體都係。雖然有啲半導體名稱彈得幾急，但佢哋仍然留在 50、21 之下。",
+                    ),
+                    r(
+                        "有強彈唔等於板塊已轉強：要睇仲喺唔喺下降均線之下。",
+                        "呢幅用 ALAB 做例子。畫面標題 Astera Labs, Inc. 只當圖上文字。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-spy-0911", "SPY 日線 09:11", "圖三",
+                "口中講 Qs 在 50 EMA，畫面卻係 SPY",
+                "直播 09:11",
+                "images/dram-semis-under/03_spy_daily_0911.jpg",
+                "images/dram-semis-under/src_03_spy_daily_0911.jpg",
+                "圖三 · SPY 日線 · 直播 09:11。註解標示口中講 Qs 在 50 EMA，但分頁同報價係 SPY，圖上名稱誤寫 QQQ。",
+                "加咗註解嘅 SPY 日線：標示代碼同名稱不一致，以及價格靠近均線叢。",
+                "直播原畫面：當時分頁為 SPY 嘅日線，未加註解。",
+                [
+                    q(
+                        "09:08–09:13 · 機器轉寫，標點為閱讀而加",
+                        "Qs is right now at the 50 EMA.",
+                        "Qs 而家喺 50 EMA。",
+                        "Whisper 把 Qs 聽成 kills。YouTube 寫 Q's。當時分頁同右側報價係 SPY，圖上正式名稱卻寫 Invesco QQQ Trust。本站按分頁同報價當作 SPY，並標出名稱錯配。",
+                    ),
+                    r(
+                        "原話係指數位置：喺 50 EMA。邊隻指數以畫面為準，唔好只跟口誤或者錯寫嘅名稱。",
+                        "圖例冇印 50 嘅週期。右側同時列出 QQQ 同 SPY，兩者報價唔同。",
+                    ),
+                ],
+            ),
+        ],
+        "notes_title": "注意事項",
+        "notes": [
+            "Qs／SPY／圖上 QQQ 名稱三者不一致，係呢科最重要嘅字幕同畫面分歧。",
+            "圖例冇印均線週期；50、21 以口中講法為準。",
+        ],
+        "disclaimer": DISCLAIMER,
+    },
+
+    {
+        "id": "uvxy-follow-through",
+        "pager_name": "UVXY 向下跟進，之後想再做卻冇購買力",
+        "when": "19:21–20:15 · 其後 28:00",
+        "nav": "UVXY 向下跟進",
+        "eyebrow": "科目四",
+        "title": "UVXY 向下跟進，之後想再做卻冇購買力",
+        "subtitle": "唔後悔昨日已賣；想再做時購買力用完，只叫放好止蝕",
+        "meta": _meta("19:21–20:15 · 其後 28:00"),
+        "watch_label": "由 19:21 觀看直播片段",
+        "watch_url": f"{YT}&t=1161s",
+        "banner": BANNER,
+        "description": "Martin Luk 直播拆解：UVXY 向下跟進，佢唔後悔昨日已賣；其後想再做但購買力用完，提到 FOMC 波動只放止蝕。教育用途。",
+        "summary_kicker": "概要",
+        "summary_title": "先確認賣出方向，之後想再做卻做唔到",
+        "summary": [
+            "19:21 佢話 UVXY 睇落幾好，正在向下跟進，唔後悔昨日已經賣出。中間有一段空白同閒聊。28:00 再說好想做呢隻 UVXY，但呢次購買力用完。提到 FOMC 或會帶來波動，不過唔算大事，只要放好止蝕，交俾市場。",
+            "約 38:25 大市急彈時，佢補充：若先前入場 UVXY，會即時被停；購買力反而救咗佢。呢段連同 QQQ 五分鐘一齊見「急彈」那科。",
+        ],
+        "card": "UVXY 向下跟進，佢唔後悔昨日已賣。之後想再做但購買力用完，只叫放好止蝕等 FOMC 波動。",
+        "charts": [
+            chart(
+                "chart-uvxy-1925", "UVXY 日線 19:25", "圖一",
+                "UVXY 日線：向下跟進",
+                "直播 19:25",
+                "images/uvxy-follow-through/01_uvxy_daily_1925.jpg",
+                "images/uvxy-follow-through/src_01_uvxy_daily_1925.jpg",
+                "圖一 · UVXY 日線 · 直播 19:25。註解標示向下跟進，以及唔後悔昨日已經賣出。",
+                "加咗註解嘅 UVXY 日線：標示向下跟進。",
+                "直播原畫面：UVXY 日線，未加註解。",
+                [
+                    q(
+                        "19:21–20:15 · 機器轉寫，標點為閱讀而加",
+                        "The UVXY is looking pretty good actually. Wow, this is following through to the downside. But I'm not regretting selling yesterday.",
+                        "UVXY 其實睇落幾好。哇，呢下係向下跟進。但我唔後悔昨日已經賣出。",
+                        "Whisper 把 selling 聽成 styling；按 YouTube 同語境更正。",
+                    ),
+                    r(
+                        "呢段係確認昨日賣出之後，價格繼續向下，所以唔後悔。",
+                        "唔好把「睇落幾好」讀成而家先開新倉；28:00 先再說想再做。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-uvxy-2805", "UVXY 日線 28:05", "圖二 · 其後",
+                "想再做 UVXY，但購買力用完",
+                "直播 28:05",
+                "images/uvxy-follow-through/02_uvxy_daily_2805.jpg",
+                "images/uvxy-follow-through/src_02_uvxy_daily_2805.jpg",
+                "圖二 · UVXY 日線 · 直播 28:05。註解標示想再做但購買力用完，以及提到 FOMC 波動時放好止蝕。",
+                "加咗註解嘅 UVXY 日線：標示想再做卻冇購買力。",
+                "直播原畫面：UVXY 日線，未加註解。",
+                [
+                    q(
+                        "28:00–28:50 · 機器轉寫，標點為閱讀而加",
+                        "I really like to take this UVXY, but I run out of buying power this time. Yeah, I think it's fine. And given that we could get some volatility because of the FOMC, but not really a big deal. Just put the stop order on and then let it work for you.",
+                        "我好想做呢隻 UVXY，但呢次購買力用完。我覺都冇所謂。雖然因為 FOMC 或會有波動，但唔算大事。就放好止蝕單，然後交俾佢為你運作。",
+                    ),
+                    r(
+                        "想做卻做唔到，所以把重點放喺止蝕同讓倉位自己工作，而唔係再追。",
+                        "FOMC 只係原話提到嘅事件風險，唔當獨立交易規則。實際有冇掛到單，畫面睇唔到。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-uvxy-3840", "UVXY 5 分鐘 38:40", "圖三 · 其後",
+                "之後急跌：若入場會即時被停",
+                "直播 38:40",
+                "images/uvxy-follow-through/03_uvxy_5m_3840.jpg",
+                "images/uvxy-follow-through/src_03_uvxy_5m_3840.jpg",
+                "圖三 · UVXY 五分鐘 · 直播 38:40。註解標示急跌，以及購買力反而令佢避過即時止蝕。",
+                "加咗註解嘅 UVXY 五分鐘圖：標示急跌。",
+                "直播原畫面：UVXY 五分鐘圖，未加註解。",
+                [
+                    q(
+                        "38:25–38:46 · 機器轉寫，標點為閱讀而加",
+                        "Well, pretty strong bounce. Like my buying power has saved me again. Like if I've entered UVXY, then I will get stopped out immediately.",
+                        "係頗強嘅反彈。我嘅購買力又再救咗我一次。如果我入場咗 UVXY，就會即時被停。",
+                        "同時間 QQQ 五分鐘見到急彈，見「急彈」那科。Whisper 把 UVXY 聽成 uxy。",
+                    ),
+                    r(
+                        "購買力用完呢件事，事後變成避過一次即時止蝕。呢個係回顧，唔係教人故意唔留購買力。",
+                        "「頗強嘅反彈」主要對住大市；UVXY 呢幅見到同期急跌。",
+                    ),
+                ],
+            ),
+        ],
+        "notes_title": "注意事項",
+        "notes": [
+            "12:11–19:21 有一段幾乎冇對白；16:20–19:21 只有短答，唔單獨成科。",
+            "畫面睇唔到倉位或者止蝕價，所以唔寫死呢啲數字。",
+        ],
+        "disclaimer": DISCLAIMER,
+    },
+    {
+        "id": "why-short-soxx",
+        "pager_name": "點解淡 SOXX：缺口、細旗同週線均線",
+        "when": "24:59–27:40",
+        "nav": "點解淡 SOXX",
+        "eyebrow": "科目五",
+        "title": "點解淡 SOXX：缺口、細旗同週線均線",
+        "subtitle": "聊天室答中下降趨勢、未補缺口、升入供給；佢最鍾意細旗高位嘅缺口同週線均線",
+        "meta": _meta("24:59–27:40"),
+        "watch_label": "由 24:59 觀看直播片段",
+        "watch_url": f"{YT}&t=1499s",
+        "banner": BANNER,
+        "description": "Martin Luk 直播拆解：點解淡 SOXX。聊天室提出下降趨勢、未補缺口、多次裂口升入供給同均線；佢特別鍾意細旗高位嘅未補缺口，以及週線均線同大市。教育用途。",
+        "summary_kicker": "概要",
+        "summary_title": "用觀眾答案，再指住圖上最關鍵嘅位置",
+        "summary": [
+            "24:59 有人問點解淡 SOXX。佢先請聊天室一齊答。答案包括下降趨勢、未補缺口、多日反彈、多次裂口升入供給、行入 20 EMAs、大市裂口向上而板塊偏弱；Whisper 仲聽到 anchored VWAP。佢話好鍾意呢啲答案，然後親自指住小時圖上未補缺口、細旗嘅高位、另一個小缺口，再加週線均線，同埋大市。",
+            "YouTube 把第一句聊天室答案聽成 coffee up；Whisper 聽成 anchor vwap。兩邊都把均線寫成 20 EMAs。本站保留 20 EMAs 原文，並註明佢常用 21，圖例冇印週期，唔把 20 當成已核對。",
+        ],
+        "card": "聊天室答中下降趨勢、未補缺口、裂口升入供給。佢最鍾意小時圖細旗高位嘅缺口，以及週線均線同大市位置。",
+        "charts": [
+            chart(
+                "chart-soxx-d-2625", "SOXX 日線 26:25", "圖一",
+                "SOXX 日線：下降趨勢，反彈仍在均線下",
+                "直播 26:25",
+                "images/why-short-soxx/01_soxx_daily_2625.jpg",
+                "images/why-short-soxx/src_01_soxx_daily_2625.jpg",
+                "圖一 · SOXX 日線 · 直播 26:25。註解標示下降趨勢，以及反彈仍在下降均線之下。",
+                "加咗註解嘅 SOXX 日線：標示下降趨勢同均線下方反彈。",
+                "直播原畫面：SOXX 日線，未加註解。",
+                [
+                    q(
+                        "24:59–26:45 · 機器轉寫，標點為閱讀而加",
+                        "Can you explain a bit why shorting SOXX? I think this one is some of you can help me to answer. Why shorting SOXX? Anchored VWAP, downtrend, unfilled gaps, multi-day bounce, multi-gap ups into supply, running into 20 EMAs, market gapping up, sector weak. Wow, I love all the answers. Yeah, amazing, that's it.",
+                        "可唔可以解釋一下點解淡 SOXX？我想呢題你可以哋幫我答。點解淡 SOXX？錨定 VWAP、下降趨勢、未補缺口、多日反彈、多次裂口升入供給、行入 20 EMAs、大市裂口向上、板塊偏弱。哇，我好鍾意呢啲答案。係，好正，就係咁。",
+                        "YouTube 把 SOXX 聽成 massive XX，把第一句答案聽成 coffee up；Whisper 先聽成 meso xx／stock x，再聽到 anchor vwap。代碼以畫面 SOXX 為準。20 EMAs 兩邊字幕一致，唔擅自改成 21。",
+                    ),
+                    r(
+                        "日線用嚟對照聊天室講嘅大結構：下降趨勢、反彈同裂口仲在供給同均線之下。",
+                        "anchored VWAP 係字幕分歧較大嘅一項，只當聊天室可能提出過嘅答案，唔把圖上某一條線標死做 AVWAP。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-soxx-1h-2710", "SOXX 小時 27:10", "圖二 · 主圖",
+                "未補缺口同細旗嘅高位",
+                "直播 27:10",
+                "images/why-short-soxx/02_soxx_1h_2710.jpg",
+                "images/why-short-soxx/src_02_soxx_1h_2710.jpg",
+                "圖二 · SOXX 小時 · 直播 27:10。註解標示未補缺口、細旗高位，以及游標附近另一個小缺口。",
+                "加咗註解嘅 SOXX 小時圖：標示未補缺口同細旗。",
+                "直播原畫面：SOXX 小時圖，未加註解。",
+                [
+                    q(
+                        "27:05–27:18 · 機器轉寫，標點為閱讀而加",
+                        "And I particularly like this unfilled gap, like this high of this small tiny flag. And we got the little gap here.",
+                        "而且我特別鍾意呢個未補缺口，就係呢個細旗嘅高位。而呢度我哋又有呢個小缺口。",
+                    ),
+                    r(
+                        "呢幅係佢親自指位置嘅主圖：未補缺口、細旗高位、再加一個小缺口。",
+                        "形態名稱以原話 tiny flag 為準，唔另外發明其他形態名。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-soxx-w-2720", "SOXX 週線 27:20", "圖三",
+                "再加週線均線，同埋大市",
+                "直播 27:20",
+                "images/why-short-soxx/03_soxx_weekly_2720.jpg",
+                "images/why-short-soxx/src_03_soxx_weekly_2720.jpg",
+                "圖三 · SOXX 週線 · 直播 27:20。註解標示週線均線，以及近週由高位回落。",
+                "加咗註解嘅 SOXX 週線：標示週線均線位置。",
+                "直播原畫面：SOXX 週線，未加註解。",
+                [
+                    q(
+                        "27:15–27:40 · 機器轉寫，標點為閱讀而加",
+                        "Also one thing is the weekly EMAs. And definitely also the market as well. I think that's perfect answers from you guys. Yeah, I'm feeling really happy, like you guys really nailed it.",
+                        "仲有一樣係週線均線。當然亦都係大市。我覺得你哋呢啲答案好完美。係，我好開心，你哋真係答中咗。",
+                    ),
+                    r(
+                        "淡 SOXX 唔只係日線形態，仲要週線均線同大市一齊對。",
+                        "圖例冇印週線均線週期。下一科會比較今日同週一、週二。",
+                    ),
+                ],
+            ),
+        ],
+        "notes_title": "注意事項",
+        "notes": [
+            "20 EMAs 係字幕原文，可能係 21；圖例冇印週期，唔把 20 當成已核對。",
+            "anchored VWAP 同 YouTube 嘅 coffee up 有分歧，只作可能答案，唔標死圖上線段。",
+        ],
+        "disclaimer": DISCLAIMER,
+    },
+
+    {
+        "id": "soxx-weekly-resistance",
+        "pager_name": "今日淡 SOXX 好過週一週二",
+        "when": "28:58–33:00",
+        "nav": "今日好過週一週二",
+        "eyebrow": "科目六",
+        "title": "今日淡 SOXX 好過週一週二",
+        "subtitle": "唔只係日線 9 同未補缺口，今日仲對齊週線阻力",
+        "meta": _meta("28:58–33:00"),
+        "watch_label": "由 28:58 觀看直播片段",
+        "watch_url": f"{YT}&t=1738s",
+        "banner": BANNER,
+        "description": "Martin Luk 直播拆解：同週一、週二比較，今日淡 SOXX 仲對齊週線阻力，所以係更好嘅入場。教育用途。",
+        "summary_kicker": "概要",
+        "summary_title": "同一方向，但今日位置更好",
+        "summary": [
+            "28:58 佢把今日同週一、週二比較：呢兩日都有日線 9 EMA 同未補缺口，當時仍然試過淡一啲，但主要把重點放喺 SpaceX。今日除咗呢啲，仲對齊週線阻力，所以覺得入場明顯更好。稍後補充：週一唔應該淡，週二試仍然合理，今日先係更好嘅一日；週二虧損可以接受，週一虧損認為本可避免。",
+            "呢段同時交代低勝率、高風險回報風格嘅難處，以及近日淡倉過急、輸過一輪。圖例冇印均線週期。",
+        ],
+        "card": "週一週二已有日線 9 同未補缺口，但今日仲對齊週線阻力，所以入場更好。週一認為不應淡，週二可以試。",
+        "charts": [
+            chart(
+                "chart-qqq-2840", "QQQ 日線 28:40", "圖一",
+                "比較時先掃過 QQQ 日線",
+                "直播 28:40",
+                "images/soxx-weekly-resistance/01_qqq_daily_2840.jpg",
+                "images/soxx-weekly-resistance/src_01_qqq_daily_2840.jpg",
+                "圖一 · QQQ 日線 · 直播 28:40。註解標示比較入場時先睇大市。",
+                "加咗註解嘅 QQQ 日線：標示比較時嘅大市背景。",
+                "直播原畫面：QQQ 日線，未加註解。",
+                [
+                    q(
+                        "28:58–29:31 · 機器轉寫，標點為閱讀而加",
+                        "And it's actually, I think if you compare it to Monday and Tuesday, I still try to short some, but not really — I'm mainly focusing on SpaceX.",
+                        "而且其實，如果你同週一、週二比較，我仍然試過淡一啲，但唔算真係主力。我主要係把重點放喺 SpaceX。",
+                    ),
+                    r(
+                        "呢幅只係比較時嘅大市背景，重點仍然在 SOXX 日線同週線。",
+                        "SpaceX 嘅相對弱勢見下一科。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-soxx-d-2920", "SOXX 日線 29:20", "圖二",
+                "週一週二已有日線 9 同未補缺口",
+                "直播 29:20",
+                "images/soxx-weekly-resistance/02_soxx_daily_2920.jpg",
+                "images/soxx-weekly-resistance/src_02_soxx_daily_2920.jpg",
+                "圖二 · SOXX 日線 · 直播 29:20。註解標示週一週二已有日線 9 同未補缺口，但當時未夠好。",
+                "加咗註解嘅 SOXX 日線：標示日線 9 同缺口。",
+                "直播原畫面：SOXX 日線，未加註解。",
+                [
+                    q(
+                        "29:32–29:49 · 機器轉寫，標點為閱讀而加",
+                        "But if you look at the semi sector as a whole, compared to Monday or maybe Tuesday, although it's like the daily 9 EMA and also this unfilled gap,",
+                        "但如果你把半導體板塊整體睇，同週一或者週二比較，雖然都有日線 9 EMA，亦有呢個未補缺口，",
+                    ),
+                    r(
+                        "日線 9 同未補缺口已經可以構成試淡理由，但佢用嚟說明呢兩日仲未夠好。",
+                        "圖例冇印 9 嘅週期。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-soxx-w-2950", "SOXX 週線 29:50", "圖三 · 主圖",
+                "今日仲對齊週線阻力",
+                "直播 29:50",
+                "images/soxx-weekly-resistance/03_soxx_weekly_2950.jpg",
+                "images/soxx-weekly-resistance/src_03_soxx_weekly_2950.jpg",
+                "圖三 · SOXX 週線 · 直播 29:50。註解標示今日對齊週線阻力，所以入場好過週一或者週二。",
+                "加咗註解嘅 SOXX 週線：標示週線阻力對齊。",
+                "直播原畫面：SOXX 週線，未加註解。",
+                [
+                    q(
+                        "29:49–33:00 · 機器轉寫，標點為閱讀而加",
+                        "but today it's actually aligning with the weekly resistance as well. Seems like yeah, this is a much better entry compared to Monday or Tuesday. Monday it shouldn't be a short, but Tuesday I think it makes sense to try, and today I think is the much better day. So I'm willing to take the losses on Tuesday, but the Monday losses can be avoidable, I think.",
+                        "但今日其實仲對齊週線阻力。睇嚟係，呢個入場比週一或者週二好得多。週一唔應該淡，但週二我覺得試仍然合理，而今日我覺得係更好嘅一日。所以週二嘅虧損我願意接受，但週一嘅虧損我覺得本可避免。",
+                        "Whisper 把 avoidable 聽成 affordable；按 YouTube 同語境更正。同一段稍早亦提到近日淡倉過急、輸過一輪，以及低勝率高風險回報風格嘅難處。",
+                    ),
+                    r(
+                        "核心分別係多咗週線阻力對齊，所以今日勝率或者位置更好，而唔係方向突然唔同。",
+                        "週一唔該淡、週二可以試，係事後回顧，唔好寫成固定日曆規則。",
+                    ),
+                ],
+            ),
+        ],
+        "notes_title": "注意事項",
+        "notes": [
+            "33:31 有觀眾問剛淡咗 LITE 同 SK Hynix，佢話今日淡倉日子幾好，甚至唔使開圖，但冇獨立拆呢兩隻，故唔另開一科。",
+            "畫面睇唔到損益，提到嘅虧損只保留原話。",
+        ],
+        "disclaimer": DISCLAIMER,
+    },
+    {
+        "id": "spcx-weakness-avwap",
+        "pager_name": "SPCX 相對弱勢，之後再入錨定 VWAP",
+        "when": "30:08–30:42 · 其後 1:04:27",
+        "nav": "SPCX 相對弱勢同再入",
+        "eyebrow": "科目七",
+        "title": "SPCX 相對弱勢，之後再入錨定 VWAP",
+        "subtitle": "昨日係例外弱勢，今日向下跟進；早前被停後，在開市區間回調入錨定 VWAP 再入",
+        "meta": _meta("30:08–30:42 · 其後 1:04:27"),
+        "watch_label": "由 30:08 觀看直播片段",
+        "watch_url": f"{YT}&t=1808s",
+        "banner": BANNER,
+        "description": "Martin Luk 直播拆解：SPCX 昨日相對弱勢、今日向下跟進；被停後在開市區間回調入錨定 VWAP 再入。教育用途。",
+        "summary_kicker": "概要",
+        "summary_title": "大市強嘅時候，相對弱勢先成為例外",
+        "summary": [
+            "30:08 佢話 SpaceX 今日亦有向下跟進。昨日其實都可以入場，但因為淡倉已經太多、大市又強，所以打得防守啲。SPCX 係昨日嘅例外，展現相對弱勢，其他股票則彈得急。約 1:04:27 回應觀眾：自己昨日亦被停，再入係在開市區間回調入錨定 VWAP；希望可以跟進。由八月底起，SPCX 大約有十次連輸。",
+            "畫面標題寫住 Space Exploration Technologies Corp，只當圖上文字。錨定 VWAP 多數冇印標籤，位置以口中同畫面線條一齊讀。",
+        ],
+        "card": "昨日大市強，SPCX 係相對弱勢嘅例外；今日向下跟進。被停後，在開市區間回調入錨定 VWAP 再入。",
+        "charts": [
+            chart(
+                "chart-spcx-d-3030", "SPCX 日線 30:30", "圖一",
+                "昨日相對弱勢，今日向下跟進",
+                "直播 30:30",
+                "images/spcx-weakness-avwap/01_spcx_daily_3030.jpg",
+                "images/spcx-weakness-avwap/src_01_spcx_daily_3030.jpg",
+                "圖一 · SPCX 日線 · 直播 30:30。註解標示昨日相對弱勢，以及今日向下跟進。",
+                "加咗註解嘅 SPCX 日線：標示相對弱勢同今日跟進。",
+                "直播原畫面：SPCX 日線，未加註解。",
+                [
+                    q(
+                        "30:08–30:42 · 機器轉寫，標點為閱讀而加",
+                        "SpaceX is also getting some follow through to the downside today. Yesterday it also could be an entry, but I tried to play a little bit defensive yesterday because I got too many shorts and yesterday the market is pretty strong. SpaceX is the exception, which shows some type of relative weakness yesterday. All other stocks are bouncing pretty strongly yesterday.",
+                        "SpaceX 今日亦有向下跟進。昨日其實都可以係一個入場，但我昨日打得防守啲，因為淡倉已經太多，而且昨日大市頗強。SpaceX 係例外，昨日展現某啲相對弱勢。其他股票昨日都彈得幾急。",
+                    ),
+                    r(
+                        "相對弱勢要對住大市嚟讀：別的彈、佢唔跟，先成為例外。",
+                        "昨日可以入但選擇防守，係倉位已經太多，唔係否定位置。畫面標題只當圖上文字。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-spcx-1h-3015", "SPCX 小時 30:15", "圖二",
+                "小時圖見到今日向下跟進",
+                "直播 30:15",
+                "images/spcx-weakness-avwap/02_spcx_1h_3015.jpg",
+                "images/spcx-weakness-avwap/src_02_spcx_1h_3015.jpg",
+                "圖二 · SPCX 小時 · 直播 30:15。註解標示今日破開區間向下跟進。",
+                "加咗註解嘅 SPCX 小時圖：標示向下跟進。",
+                "直播原畫面：SPCX 小時圖，未加註解。",
+                [
+                    q(
+                        "同一段對白 · 畫面約 30:15 停在小時圖",
+                        "SpaceX is also getting some follow through to the downside today.",
+                        "SpaceX 今日亦有向下跟進。",
+                    ),
+                    r(
+                        "小時圖用來看當日跟進：區間之後向下破。",
+                        "同日線一齊讀，唔好只記住其中一幅。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-spcx-1m-10505", "SPCX 1 分鐘 1:05:05", "圖三 · 其後",
+                "被停後，在開市區間回調入錨定 VWAP 再入",
+                "直播 1:05:05",
+                "images/spcx-weakness-avwap/03_spcx_1m_10505.jpg",
+                "images/spcx-weakness-avwap/src_03_spcx_1m_10505.jpg",
+                "圖三 · SPCX 一分鐘 · 直播 1:05:05。註解標示開市區間回調，以及彈入錨定 VWAP 再入。",
+                "加咗註解嘅 SPCX 一分鐘圖：標示開市區間同錨定 VWAP。",
+                "直播原畫面：SPCX 一分鐘圖，未加註解。",
+                [
+                    q(
+                        "1:04:27–1:05:25 · 機器轉寫，標點為閱讀而加",
+                        "I also got stopped out from SpaceX yesterday. I reentered it at the opening range pullback into the anchored VWAP. Hopefully we can get some follow through. This SpaceX, I have maybe like a 10 losing streaks on SpaceX, starting from late August.",
+                        "我昨日都喺 SpaceX 被停。我再入係在開市區間回調入錨定 VWAP。希望可以有啲跟進。呢隻 SpaceX，由八月底開始，我大概有十次連輸。",
+                    ),
+                    r(
+                        "再入場係有具體位置：開市區間回調，並且行入錨定 VWAP。",
+                        "連輸次數只係原話回顧，唔好寫成必然繼續輸或者必然翻本。圖例多數冇印 AVWAP 標籤。",
+                    ),
+                ],
+            ),
+        ],
+        "notes_title": "注意事項",
+        "notes": [
+            "畫面標題 Space Exploration Technologies Corp 只當圖上文字，唔當成企業聲明。",
+            "畫面睇唔到止蝕價、再入成交價或者連輸嘅實際損益。",
+        ],
+        "disclaimer": DISCLAIMER,
+    },
+    {
+        "id": "bounce-higher-shorts",
+        "pager_name": "急彈：愈高愈想淡；UVXY 若入場會即停",
+        "when": "38:25–39:45",
+        "nav": "急彈：愈高愈想淡",
+        "eyebrow": "科目八",
+        "title": "急彈：愈高愈想淡；UVXY 若入場會即停",
+        "subtitle": "QQQ 五分鐘頗強反彈；購買力令佢避過 UVXY 即時止蝕",
+        "meta": _meta("38:25–39:45"),
+        "watch_label": "由 38:25 觀看直播片段",
+        "watch_url": f"{YT}&t=2305s",
+        "banner": BANNER,
+        "description": "Martin Luk 直播拆解：大市急彈時，佢覺得愈高愈有利淡倉，同時若先前入場 UVXY 會即時被停。教育用途。",
+        "summary_kicker": "概要",
+        "summary_title": "大市急彈，一邊睇淡倉位置，一邊回顧 UVXY",
+        "summary": [
+            "38:25 畫面先係 QQQ 五分鐘急彈。佢話呢下反彈頗強，購買力又再救咗佢：若入場咗 UVXY，就會即時被停。跟住講價格繼續向上推，對佢嚟講愈高，淡倉愈好，但又加一句自己可以錯。",
+            "UVXY 想做卻冇購買力，見前面 UVXY 那科。呢科把同一時間嘅大市同 UVXY 一齊讀。",
+        ],
+        "card": "QQQ 五分鐘頗強反彈。若先前入場 UVXY 會即時被停。佢覺得大市愈高，淡倉愈好，但又話自己可以錯。",
+        "charts": [
+            chart(
+                "chart-qqq-5m-3825", "QQQ 5 分鐘 38:25", "圖一 · 主圖",
+                "頗強嘅反彈：愈高佢愈想淡",
+                "直播 38:25",
+                "images/bounce-higher-shorts/01_qqq_5m_3825.jpg",
+                "images/bounce-higher-shorts/src_01_qqq_5m_3825.jpg",
+                "圖一 · QQQ 五分鐘 · 直播 38:25。註解標示頗強反彈，以及愈高佢愈覺得淡倉條件更好，但話自己可以錯。",
+                "加咗註解嘅 QQQ 五分鐘圖：標示急彈。",
+                "直播原畫面：QQQ 五分鐘圖，未加註解。",
+                [
+                    q(
+                        "38:25–39:45 · 機器轉寫，標點為閱讀而加",
+                        "Well, pretty strong bounce. Like my buying power has saved me again. Like if I've entered UVXY, then I will get stopped out immediately. As it's getting higher, it's continuing pushing higher. To me, the higher it goes, the better the shorts, but I could be wrong.",
+                        "係頗強嘅反彈。我嘅購買力又再救咗我一次。如果我入場咗 UVXY，就會即時被停。佢愈升，就繼續向上推。對我嚟講，愈高，淡倉愈好，但我可以錯。",
+                        "Whisper 把 As it's getting higher 聽成 let's get high knees，把 shorts 聽成 shots；按 YouTube 同語境更正。",
+                    ),
+                    r(
+                        "「愈高愈好淡」係當時對住急彈嘅想法，佢自己即刻加咗「我可以錯」。",
+                        "唔好把呢句寫成無條件追淡規則。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-uvxy-5m-3840b", "UVXY 5 分鐘 38:40", "圖二",
+                "同期 UVXY 急跌，入場就會被停",
+                "直播 38:40",
+                "images/bounce-higher-shorts/02_uvxy_5m_3840.jpg",
+                "images/bounce-higher-shorts/src_02_uvxy_5m_3840.jpg",
+                "圖二 · UVXY 五分鐘 · 直播 38:40。註解標示急跌，以及若先前入場會即時被停。",
+                "加咗註解嘅 UVXY 五分鐘圖：標示急跌。",
+                "直播原畫面：UVXY 五分鐘圖，未加註解。",
+                [
+                    q(
+                        "同一段對白 · 畫面約 38:40 切到 UVXY",
+                        "Like if I've entered UVXY, then I will get stopped out immediately.",
+                        "如果我入場咗 UVXY，就會即時被停。",
+                    ),
+                    r(
+                        "大市向上急彈時，UVXY 見到同期急跌，所以先進場就會面對即時止蝕。",
+                        "呢幅同 UVXY 那科圖三係同一時間，分別用嚟對照大市同波動。",
+                    ),
+                ],
+            ),
+        ],
+        "notes_title": "注意事項",
+        "notes": [
+            "38:25 之前有一段關於追價同等待回調嘅問答，冇對應獨立走圖，唔單獨成科。",
+            "40:33 有人問 FOMC 策略，佢只答 I have a stop loss strategy，之後進入靜音翻圖，唔另開一科。",
+        ],
+        "disclaimer": DISCLAIMER,
+    },
+
+    {
+        "id": "soxx-upthrust",
+        "pager_name": "SOXX 假突破後再入：1 分鐘收市低過 9",
+        "when": "1:02:27–1:04:27",
+        "nav": "SOXX 假突破後再入",
+        "eyebrow": "科目九",
+        "title": "SOXX 假突破後再入：1 分鐘收市低過 9",
+        "subtitle": "先講 5 分鐘跌破，隨即改口係 upthrust 之後 1 分鐘收市低過 9 EMA",
+        "meta": _meta("1:02:27–1:04:27"),
+        "watch_label": "由 1:02:27 觀看直播片段",
+        "watch_url": f"{YT}&t=3747s",
+        "banner": BANNER,
+        "description": "Martin Luk 直播拆解：SOXX 被停後再入。先講 5 分鐘跌破，隨即改口為假突破／upthrust 之後 1 分鐘收市低過 9 EMA。教育用途。",
+        "summary_kicker": "概要",
+        "summary_title": "同一再入場，講法改得更精準",
+        "summary": [
+            "1:02:27 有觀眾提到淡倉在低位被停、之後再入嘅困擾。佢話自己亦被停，再入係在 5 分鐘跌破；隨即改口：或者唔係，其實只係呢一下超調、假突破或者 upthrust 之後，1 分鐘收市低過 9 EMA。畫面係 SOXX 一分鐘。",
+            "圖例冇印 9 嘅週期。overshoot、fakeout、upthrust 三種叫法佢覺得都得。",
+        ],
+        "card": "被停後再入。先講 5 分鐘跌破，隨即改口：喺超調／假突破／upthrust 之後，1 分鐘收市低過 9 EMA。",
+        "charts": [
+            chart(
+                "chart-soxx-1m-10250", "SOXX 1 分鐘 1:02:50", "圖一 · 主圖",
+                "超調之後，1 分鐘收市低過 9",
+                "直播 1:02:50",
+                "images/soxx-upthrust/01_soxx_1m_10250.jpg",
+                "images/soxx-upthrust/src_01_soxx_1m_10250.jpg",
+                "圖一 · SOXX 一分鐘 · 直播 1:02:50。註解標示頂部超調／假突破／upthrust，以及口中再入係 1 分鐘收市低過 9。",
+                "加咗註解嘅 SOXX 一分鐘圖：標示 upthrust 同 9 EMA。",
+                "直播原畫面：SOXX 一分鐘圖，未加註解。",
+                [
+                    q(
+                        "1:02:27–1:04:27 · 機器轉寫，標點為閱讀而加",
+                        "I got stopped out too. But I reentered it on the 5-minute breakdown. Well, maybe not. It's just the 1-minute close below the 9 EMA. Like right after this overshoot, or like a fakeout, or like the upthrust. I don't know, whatever you call it.",
+                        "我都被停。但我再入係在 5 分鐘跌破。唉，或者唔係。其實就只係 1 分鐘收市低過 9 EMA。就喺呢一下超調，或者假突破，或者 upthrust 之後。我唔知，你點叫都得。",
+                    ),
+                    r(
+                        "值得學嘅係佢即場改口：由較粗嘅 5 分鐘跌破，改成更具體嘅 1 分鐘收市低過 9，而且發生在超調之後。",
+                        "三種形態叫法並存，唔好只執其中一个名。圖例冇印 9 嘅週期。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-soxx-1m-10310", "SOXX 1 分鐘 1:03:10", "圖二",
+                "其後一分鐘走勢",
+                "直播 1:03:10",
+                "images/soxx-upthrust/02_soxx_1m_10310.jpg",
+                "images/soxx-upthrust/src_02_soxx_1m_10310.jpg",
+                "圖二 · SOXX 一分鐘 · 直播 1:03:10。註解標示同一再入場之後嘅一分鐘走勢。",
+                "加咗註解嘅 SOXX 一分鐘圖：標示其後走勢。",
+                "直播原畫面：SOXX 一分鐘圖，未加註解。",
+                [
+                    q(
+                        "同一段對白 · 畫面稍後仍在一分鐘",
+                        "Like right after this overshoot, or like a fakeout, or like the upthrust.",
+                        "就喺呢一下超調，或者假突破，或者 upthrust 之後。",
+                    ),
+                    r(
+                        "第二幅用來對照游標離開之後嘅一分鐘結構，唔另開新結論。",
+                        "畫面睇唔到再入成交價或者止蝕。",
+                    ),
+                ],
+            ),
+        ],
+        "notes_title": "注意事項",
+        "notes": [
+            "49:02 至約 1:02 主要係屏幕配置、流動性、止蝕距離、VCP 成交量等問答，冇獨立讀圖教學，唔單獨成科。佢說過唔會睇成交量。",
+            "觀眾原話有 so exist 等聽唔清之處；再入場以畫面 SOXX 同一分鐘圖為準。",
+        ],
+        "disclaimer": DISCLAIMER,
+    },
+    {
+        "id": "hold-declining-9",
+        "pager_name": "點解昨日唔全部平倉：未破下降 9",
+        "when": "1:12:40–1:14:48",
+        "nav": "未破下降 9 所以繼續持有",
+        "eyebrow": "科目十",
+        "title": "點解昨日唔全部平倉：未破下降 9",
+        "subtitle": "大市繼續強，但淡倉未違反下降中嘅 9 EMA",
+        "meta": _meta("1:12:40–1:14:48"),
+        "watch_label": "由 1:12:40 觀看直播片段",
+        "watch_url": f"{YT}&t=4360s",
+        "banner": BANNER,
+        "description": "Martin Luk 直播拆解：昨日大市繼續強，點解唔把淡倉全部平掉。最簡單理由係未有倉位違反下降中嘅 9 EMA。教育用途。",
+        "summary_kicker": "概要",
+        "summary_title": "持有理由可以好簡單",
+        "summary": [
+            "1:12:40 有人問：昨日大市繼續強，點解仍然持有咁多倉、唔全部平掉。佢話最簡單嘅理由：呢啲交易未有違反下降中嘅 9 EMA。畫面先後經過 SOXX、黃金 ETF、COIN 等同類型檢查。",
+            "1:13:05 分頁寫住 BMNR，但水印、正式名稱同報價都係 GLD（SPDR Gold Shares）。本站按圖同報價當作 GLD，並標出分頁錯配。圖例冇印 9 嘅週期。",
+        ],
+        "card": "昨日大市繼續強，但淡倉未違反下降中嘅 9 EMA，所以冇全部平倉。畫面用 SOXX、GLD、COIN 做同一檢查。",
+        "charts": [
+            chart(
+                "chart-soxx-11250", "SOXX 日線 1:12:50", "圖一 · 主圖",
+                "SOXX：未違反下降中嘅 9 EMA",
+                "直播 1:12:50",
+                "images/hold-declining-9/01_soxx_daily_11250.jpg",
+                "images/hold-declining-9/src_01_soxx_daily_11250.jpg",
+                "圖一 · SOXX 日線 · 直播 1:12:50。註解標示雖然大市繼續強，但淡倉未破下降中嘅 9 EMA。",
+                "加咗註解嘅 SOXX 日線：標示未破下降 9。",
+                "直播原畫面：SOXX 日線，未加註解。",
+                [
+                    q(
+                        "1:12:40–1:14:48 · 機器轉寫，標點為閱讀而加",
+                        "I'm surprised you held as many positions as you did through yesterday's continued strength. Can you talk about why you decided not to close out everything yesterday? In short, like none of those trades are violating the declining 9 EMA. I think that's the simplest reason that I can give.",
+                        "我好意外，昨日大市繼續強，你仍然持有咁多倉。可唔可以講下點解昨日決定唔全部平掉？簡單嚟講，就係呢啲交易未有違反下降中嘅 9 EMA。我覺得呢個係我可以俾到最簡單嘅理由。",
+                    ),
+                    r(
+                        "持有唔係因為預測大市一定跌，而係結構未壞：下降 9 未被違反。",
+                        "呢個係當時最簡單嘅理由，唔好擴寫成所有淡倉嘅永恆規則。圖例冇印週期。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-gld-11305", "GLD 日線 1:13:05", "圖二",
+                "畫面係 GLD，分頁卻寫 BMNR",
+                "直播 1:13:05",
+                "images/hold-declining-9/02_gld_daily_11305.jpg",
+                "images/hold-declining-9/src_02_gld_daily_11305.jpg",
+                "圖二 · GLD 日線 · 直播 1:13:05。註解標示分頁寫住 BMNR，但水印同報價係黃金 ETF，以及價格仍在下降均線之下。",
+                "加咗註解嘅 GLD 日線：標示代碼錯配同下降均線。",
+                "直播原畫面：分頁顯示 BMNR、圖為 GLD 嘅日線，未加註解。",
+                [
+                    q(
+                        "同一段對白 · 翻圖檢查其他淡倉",
+                        "None of those trades are violating the declining 9 EMA.",
+                        "呢啲交易未有違反下降中嘅 9 EMA。",
+                        "分頁寫 BMNR，水印寫 GLD 1D，正式名稱 SPDR Gold Shares，右側 GLD 報價同圖上價格相符；BMNR 報價在右側另一行。以圖同報價當作 GLD。",
+                    ),
+                    r(
+                        "呢幅用來說明同一條規則可以套去其他淡倉，唔係黃金嘅獨立新結論。",
+                        "代碼錯配要標出，唔好把 BMNR 寫成呢幅圖嘅主體。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-coin-11320", "COIN 日線 1:13:20", "圖三",
+                "COIN 同樣做下降 9 檢查",
+                "直播 1:13:20",
+                "images/hold-declining-9/03_coin_daily_11320.jpg",
+                "images/hold-declining-9/src_03_coin_daily_11320.jpg",
+                "圖三 · COIN 日線 · 直播 1:13:20。註解標示呢幅只係同一檢查下嘅翻圖，並非逐隻新結論。",
+                "加咗註解嘅 COIN 日線：標示同一下降 9 檢查。",
+                "直播原畫面：COIN 日線，未加註解。",
+                [
+                    q(
+                        "同一段對白 · 繼續翻圖",
+                        "I think that's the simplest reason that I can give.",
+                        "我覺得呢個係我可以俾到最簡單嘅理由。",
+                    ),
+                    r(
+                        "COIN 只係同一輪檢查裡嘅其中一隻，唔另開新科。",
+                        "1:13:40 亦掃過 QQQ 日線，同樣唔單獨成科。",
+                    ),
+                ],
+            ),
+        ],
+        "notes_title": "注意事項",
+        "notes": [
+            "GLD／BMNR 分頁錯配係呢科主要畫面分歧。",
+            "圖例冇印 9 嘅週期。畫面睇唔到逐隻倉位有冇真係持有。",
+        ],
+        "disclaimer": DISCLAIMER,
+    },
+
+    {
+        "id": "traction-gap-chop",
+        "pager_name": "冇 traction：裂口後橫行同寬幅上落",
+        "when": "1:14:48–1:17:37",
+        "nav": "冇 traction 嘅裂口後橫行",
+        "eyebrow": "科目十一",
+        "title": "冇 traction：裂口後橫行同寬幅上落",
+        "subtitle": "裂口後大約一個月偏橫行；亦想起二、三月噉嘅一上一日",
+        "meta": _meta("1:14:48–1:17:37"),
+        "watch_label": "由 1:14:48 觀看直播片段",
+        "watch_url": f"{YT}&t=4488s",
+        "banner": BANNER,
+        "description": "Martin Luk 直播拆解：冇 traction 時會怎麼辦。最近一次係裂口向下後大約一個月橫行甚至輕微回撤；亦提起二、三月寬幅上落。教育用途。",
+        "summary_kicker": "概要",
+        "summary_title": "冇 traction 嘅時段，往往靠縮細同少做",
+        "summary": [
+            "有人問：如果做多冇 traction 就轉淡、反之亦然，咁冇 traction 要等多耐。佢話自己正正係呢類時段會更常直播，因為不斷試新交易。最近一次係呢次裂口向下之後，大約成個月偏橫行，甚至有輕微回撤，主要因為裂口前持有一啲做多。呢類時段就係純粹沮喪。亦提起二月至三月初：寬幅 K 線、一日上一日落，反彈就試淡，最後雖然崩潰，但試太多次。可以做嘅係，當權益曲線做唔到更高高點、甚至變成更低高點同更低低點，就縮細或者少做。佢承認對呢類市場冇很好嘅方案。",
+            "畫面係較長周期嘅 QQQ 日線，游標指住較早時段。右邊其後先有大升，只係事後走勢，唔好當成當日預測。",
+        ],
+        "card": "裂口向下後大約一個月偏橫行甚至輕微回撤。二、三月亦有寬幅上落。權益曲線做唔到更高高點時，就縮細或者少做。",
+        "charts": [
+            chart(
+                "chart-qqq-11610", "QQQ 日線 1:16:10", "圖一",
+                "較長周期回顧：裂口之後嘅橫行",
+                "直播 1:16:10",
+                "images/traction-gap-chop/01_qqq_daily_11610.jpg",
+                "images/traction-gap-chop/src_01_qqq_daily_11610.jpg",
+                "圖一 · QQQ 日線 · 直播 1:16:10。註解標示口中裂口後約一個月偏橫行，游標指住較早時段，以及右邊其後大升只係事後走勢。",
+                "加咗註解嘅 QQQ 日線：標示裂口後橫行同較長周期回顧。",
+                "直播原畫面：QQQ 日線，未加註解。",
+                [
+                    q(
+                        "1:14:48–1:17:37 · 機器轉寫，標點為閱讀而加",
+                        "Do you have a time frame of no traction? For example, 1 week, 2 weeks no traction. Yes, I think I actually stream a lot when I got no traction because I keep trying to make new trades. The recent one is this one from after this gap down. After this gap down for like the whole month, I've been going sideways. Actually maybe in a slight drawdown. But it's also mainly because of this gap down too, because I think I'm holding some longs before this gap down. And also I think on February to early March as well. Like these chops, wide candles, and up one day, down one day. I keep trying to short on the bounce, but eventually it did collapse, but it just takes too many tries. What I can do is trying to scale down or trade less when my equity curve is not making a higher high, or it's making a lower high and a lower low. Then maybe it's time to slow down a little bit. I don't have a really good solution on this type of market.",
+                        "你有冇一個冇 traction 嘅時限？例如一星期、兩星期。有。我其實往往喺冇 traction 嘅時候直播得更密，因為我不斷試新交易。最近一次就係呢次裂口向下之後。裂口之後大約成個月，我一路偏橫行。其實可能仲有輕微回撤。不過亦主要因為呢次裂口，因為我記得裂口前持有一啲做多。而且我覺得二月至三月初都係。就係呢類上落、寬幅 K 線、一日上一日落。我不斷喺反彈試淡，最後雖然崩潰，但試咗太多次。我可以做嘅係，當權益曲線做唔到更高高點，或者變成更低高點同更低低點，就縮細或者少做。或者就係時候慢下來。對呢類市場，我冇一個好好嘅方案。",
+                    ),
+                    r(
+                        "呢幅要用嚟回顧歷史時段，唔好把右邊後來嘅大升讀成當日已經講出嘅預測。",
+                        "「冇固定幾個星期」係重點：佢承認呢類市難做，只提出縮細同少做。digit drawdown 只保留原話，唔寫死幅度。",
+                    ),
+                ],
+            ),
+        ],
+        "notes_title": "注意事項",
+        "notes": [
+            "呢幅係較長周期回顧，游標唔喺最新一根 K。",
+            "權益曲線同回撤幅度畫面睇唔到，只保留原話。",
+        ],
+        "disclaimer": DISCLAIMER,
+    },
+    {
+        "id": "rules-vs-judgment",
+        "pager_name": "點解唔把規則交俾 AI",
+        "when": "1:17:37–1:26:18",
+        "nav": "點解唔把規則交俾 AI",
+        "eyebrow": "科目十二",
+        "title": "點解唔把規則交俾 AI",
+        "subtitle": "掃描只係收窄範圍；9／21 回調規則太易講，真正要判斷嘅係幾時跳過",
+        "meta": _meta("1:17:37–1:26:18"),
+        "watch_label": "由 1:17:37 觀看直播片段",
+        "watch_url": f"{YT}&t=4657s",
+        "banner": BANNER,
+        "description": "Martin Luk 直播拆解：掃描設定同點解唔用 AI 代勞揀股。最易講嘅規則係回調入 9 同 21，以及均線層層向下，但板塊、大市、同伴同價格行為會令佢跳過。教育用途。",
+        "summary_kicker": "概要",
+        "summary_title": "規則容易寫，判斷先係佢想保留嘅部份",
+        "summary": [
+            "1:17:37 起先答掃描設定：大致仍用以前嘅條件，或會把成交額改到 1 億美元，亦過濾部份生物科技，並排除收購或合併。跟住有人問點解唔用 AI 代勞逐張圖睇。佢話掃描最重要嘅工作並唔係直接列出今日要做嘅名字，而係收窄宇宙、提供候選；真正決定邊隻、喺邊、幾時做，仍然要自己來。連觀察觀察名單、感受唔同板塊同市值角落發生緊咩事，都係過程。最易講出嚟嘅規則，可以係回調入 9 同 21 EMA，再加 9 在 21 下、21 在 50 下、50 在 150 下；但每日都會有好多呢類機會，係唔係淡每一個都賺錢，佢唔知。有時會因為板塊強、大市強或者大市在支持、同伴強，或者唔鍾意價格行為而跳過。例如昨日出現頗長嘅 pin bar，第二日嘅回調佢未必會淡。呢啲細節更難定義，亦係佢想手動做、透過翻圖訓練形態辨識嘅部份。所以佢唔想把呢啲字交俾 AI，甚至擔心會令交易變差。",
+            "畫面先見到 Potent 掃描器，之後一邊講一邊翻圖。1:24 前後停過 XYZ，只係翻圖過程，唔把呢隻當成口中 pin bar 例子。圖例冇印均線週期。",
+        ],
+        "card": "掃描只係收窄範圍。最易講嘅淡倉規則係回調入 9、21，同均線層層向下；但板塊、大市、同伴同 pin bar 呢類價格行為，會令佢跳過。",
+        "charts": [
+            chart(
+                "chart-screener-11840", "Potent 掃描 1:18:40", "圖一",
+                "掃描器只係收窄宇宙",
+                "直播 1:18:40",
+                "images/rules-vs-judgment/01_screener_11840.jpg",
+                "images/rules-vs-judgment/src_01_screener_11840.jpg",
+                "圖一 · Potent 掃描器 · 直播 1:18:40。註解標示畫面見到市值 ≥ 1 億美元等條件，以及掃描只係收窄範圍。",
+                "加咗註解嘅掃描器畫面：標示條件同掃描用途。",
+                "直播原畫面：Potent 掃描器，未加註解。",
+                [
+                    q(
+                        "1:17:37–1:22:37 · 機器轉寫，標點為閱讀而加",
+                        "You still use your screening settings like the years before. I think so. I think maybe I changed it a little bit. Maybe I would like trying to change the dollar volume to like 100 million. And also I filter some biotechs out on my potential watch list. And also added this one trying to exclude the buyouts or the merger. Why don't you choose AI to help you with screening so you don't need to check the price charts one by one? The screeners are not doing the most important thing for me. The screeners is just trying to narrow down my universe, or providing me some potential candidates for my trades. So it's not actually showing me the names that I should trade today. Then I am the one who really decide which one to trade and where and when I should trade. Even though I'm not trading these names, but just by going through them, I can get a sense of what is happening right now in different corners of the markets, like in different sectors, different market caps.",
+                        "你係咪仍然用幾年前嗰套掃描設定？我覺係。可能改過少少。或者我會想把成交額改到大約 1 億美元。而且我亦喺潛在觀察名單過濾走部份生物科技，又加咗一項想排除收購或者合併。點解唔用 AI 幫你掃描，就唔使一張張圖睇？掃描器對我嚟講，並冇做最重要嗰部份。掃描器只係幫我收窄宇宙，或者提供一啲潛在候選。佢其實唔係直接話俾我聽今日應該做邊隻。之後仍然係我決定做邊隻、喺邊、同幾時做。即使呢啲名字我唔會做，但只要逐隻行過，我都可以感受而家市場唔同角落、唔同板塊同市值發生緊咩事。",
+                    ),
+                    r(
+                        "掃描係工具，唔係今日嘅交易清單。畫面見到嘅條件只當圖上設定，唔好當成完整規則表。",
+                        "1 億美元係口中可能修改嘅成交額，畫面同時見到市值 ≥ 100 M USD；兩者唔好混為同一條。",
+                    ),
+                ],
+            ),
+            chart(
+                "chart-qqq-12130", "QQQ 日線 1:21:30", "圖二 · 主圖",
+                "最易講嘅規則，同佢真正會跳過嘅細節",
+                "直播 1:21:30",
+                "images/rules-vs-judgment/02_qqq_daily_12130.jpg",
+                "images/rules-vs-judgment/src_02_qqq_daily_12130.jpg",
+                "圖二 · QQQ 日線 · 直播 1:21:30。註解標示回調入 9 同 21、均線層層向下只係最易講嘅規則，以及實際仲會睇板塊、大市、同伴同價格行為。",
+                "加咗註解嘅 QQQ 日線：標示規則同判斷要分開。",
+                "直播原畫面：QQQ 日線，未加註解。",
+                [
+                    q(
+                        "1:22:37–1:26:18 · 機器轉寫，標點為閱讀而加",
+                        "I believe there are tons of pullback entries. Like if you just define some rules like the pullback into the 9 and 21 EMA. And maybe the 9 under 21, 21 under the 50, 50 under the 150. That is I think the easiest rules that I can come up with. And I think there will be quite a lot of opportunities every day, but does shorting every one of those is profitable? I don't know. Sometimes I will skip or avoid some trades because maybe the sector is strong. Maybe the market is strong, like the market is at the support level. Maybe the peers is strong. Or I just don't like the price actions. Let's say we got a pretty long pin bar candle yesterday. Will I short the next pullback on the next day? Maybe not. So these are the details that may be a little bit harder to define, that I would like to focus on when I'm manually doing the stuff. And also like flipping all the charts actually helps you to train your pattern recognition. I think it's also part of the learning process too. So I actually hate putting these words to AI. I think in this particular aspect of trading, AI is not going to help me, or maybe it's going to worsen my trading.",
+                        "我相信回調入場多得係。如果你只係定義一啲規則，例如回調入 9 同 21 EMA，或者 9 在 21 之下、21 在 50 之下、50 在 150 之下，我覺得呢啲已經係我可以想到最易嘅規則。而每日都會有好多呢類機會，但係唔係淡每一個都會賺錢？我唔知。有時我會跳過或者避開一啲交易，可能因為板塊強，可能因為大市強，例如大市喺支持位。又或者同伴強。又或者我只係唔鍾意嗰個價格行為。譬如話昨日出咗一根頗長嘅 pin bar，第二日嘅回調我會唔會淡？或者唔會。所以呢啲細節可能更難定義，而係我手動做嘅時候想聚焦嘅部份。而且把圖全部翻一遍，其實亦幫你訓練形態辨識。我覺得呢都係學習過程。所以我其實好唔鍾意把呢啲字交俾 AI。我覺得喺交易呢一個特別嘅部份，AI 幫唔到我，或者甚至會令我嘅交易變差。",
+                        "Whisper 把 peers 聽成 pierce。1:24 前後畫面一度停在 XYZ，只係翻圖，唔把呢隻當成口中 pin bar 例子。",
+                    ),
+                    r(
+                        "最易講嘅規則可以寫低，但佢認為真正價值在於幾時跳過：板塊、大市位置、同伴，同價格行為。",
+                        "pin bar 例子係口頭假設，唔好在呢幅 QQQ 或者其後翻到嘅股票上標死「就係呢根」。圖例冇印 9、21、50、150 嘅週期。",
+                    ),
+                ],
+            ),
+        ],
+        "notes_title": "注意事項",
+        "notes": [
+            "掃描畫面條件只當圖上文字。口中 1 億美元成交額同畫面市值過濾唔好混為同一條。",
+            "1:22–1:25 快速翻過 ZS、ASST、DOW、XYZ、SOFI、FIX 等，冇獨立分析點，唔做成圖冊。",
+        ],
+        "disclaimer": DISCLAIMER,
+    },
+    {
+        "id": "let-stops-work",
+        "pager_name": "收結：交俾止蝕；最差係強勢收市再準備做多",
+        "when": "1:26:28–1:28:18",
+        "nav": "交俾止蝕，準備最差情況",
+        "eyebrow": "科目十三",
+        "title": "收結：交俾止蝕；最差係強勢收市再準備做多",
+        "subtitle": "若大市繼續向上並強勢收市，呢輪 swing 或會重置；新開倉口中全部風險少過 0.3%",
+        "meta": _meta("1:26:28–1:28:18"),
+        "watch_label": "由 1:26:28 觀看直播片段",
+        "watch_url": f"{YT}&t=5188s",
+        "banner": BANNER,
+        "description": "Martin Luk 直播拆解：收結時交俾止蝕決定。最差情況係大市繼續向上並強勢收市，呢輪 swing 或會重置，之後先再考慮做多。教育用途。",
+        "summary_kicker": "概要",
+        "summary_title": "讓止蝕工作，並預先講最差情況",
+        "summary": [
+            "1:26:28 佢話今日就講到呢度，會讓止蝕來決定，讓倉位為佢工作。最差情況係：如果大市繼續向上，佢希望見到好好嘅向上跟進並且強勢收市；噉嘅話，呢輪 swing 或會有一個頗好嘅重置，之後先再準備未來幾日嘅做多。但又強調呢個係最差情況。新開倉口中全部風險只係少過 0.3%，所以覺得安心。最後多謝大家，下次再見。",
+            "0.3% 只係原話數字，畫面睇唔到實際風險或者倉位。唔當可複製規則。",
+        ],
+        "card": "交俾止蝕決定。最差情況係大市繼續向上並強勢收市，呢輪 swing 或會重置，之後先再考慮做多。新開倉口中全部風險少過 0.3%。",
+        "charts": [
+            chart(
+                "chart-qqq-12710", "QQQ 日線 1:27:10", "圖一",
+                "最差情況：繼續向上並強勢收市",
+                "直播 1:27:10",
+                "images/let-stops-work/01_qqq_daily_12710.jpg",
+                "images/let-stops-work/src_01_qqq_daily_12710.jpg",
+                "圖一 · QQQ 日線 · 直播 1:27:10。註解標示最差情況係大市繼續向上並強勢收市，以及交俾止蝕決定。",
+                "加咗註解嘅 QQQ 日線：標示最差情況同交俾止蝕。",
+                "直播原畫面：QQQ 日線，未加註解。",
+                [
+                    q(
+                        "1:26:28–1:28:18 · 機器轉寫，標點為閱讀而加",
+                        "So I think that's it for today. I'm just going to let my stop to decide, to let them work for me. And if the worst case scenario, if the market is going to continue higher, I'd like to get a really good follow through to the upside and close strongly. And I think that will be a pretty good reset for this swing and maybe prepare for the longs in the coming days. But yeah, that's the worst case scenario. Yeah, but the risk is pretty, like my new trades, I think it's only less than 0.3% for all of these trades. So I'm feeling pretty comfortable with them. Thank you guys for coming, and we'll see you in the next one.",
+                        "所以我覺得今日就講到呢度。我將會讓止蝕來決定，讓佢哋為我工作。如果係最差情況，大市繼續向上，我希望見到好好嘅向上跟進，並且強勢收市。我覺得噉會係呢輪 swing 一個頗好嘅重置，或者準備未來幾日嘅做多。不過係，呢個係最差情況。但風險其實，我呢啲新開倉，我覺得全部加埋只係少過 0.3%。所以我對佢哋覺得幾安心。多謝大家到來，我哋下次再見。",
+                        "Whisper 把 stop 聽成 stock。0.3% 係口中全部新開倉嘅風險總和，唔當單筆或者可複製規則。",
+                    ),
+                    r(
+                        "收結係管理而唔係新訊號：交俾已經放好嘅止蝕。最差情況預先講清楚，而且係大市強勢向上，先考慮呢輪淡倉 swing 重置。",
+                        "「準備做多」只係最差情況之下嘅後續，唔係而家已經轉倉。",
+                    ),
+                ],
+            ),
+        ],
+        "notes_title": "注意事項",
+        "notes": [
+            "0.3% 只保留原話，畫面睇唔到實際風險、止蝕價或者損益。",
+            "收結前後仲掃過 SOXS、DRAM 等，冇新嘅獨立分析點，唔另開一科。",
+        ],
+        "disclaimer": DISCLAIMER,
+    },
+]
+
+
+STREAM = {
+    "id": "2026-10-28",
+    "date_label": "2026年10月28日",
+    "page": "2026-10-28.html",
+    "title": "《SOXX short》",
+    "eyebrow": "2026年10月28日",
+    "subtitle": "技術分析科目",
+    "meta": "Martin Luk · 開播 21:21（台北時間） · 全程重播約 1:28:18",
+    "watch_label": "打開直播重播",
+    "watch_url": YT,
+    "footer_time": "開播時間 2026年10月28日 21:21（台北時間）。",
+    "banner": "呢份係教育拆解，方便之後 review 點樣用形態、位置同均線讀圖，唔係投資建議。",
+    "card": "由開場到完結，有讀圖嘅段落按時間順序排。",
+    "summary_kicker": "概要",
+    "summary_title": "呢一場可以學嘅技術分析",
+    "summary": [
+        "呢一頁係 Martin Luk《SOXX short》（2026年10月28日）入面，佢用圖解釋市場結構、形態、位置、均線，或者說明點解咁做嘅段落，由開場到直播完結（約 1:28:18）。長空白、閒聊，同冇講分析嘅快速翻圖，唔會單獨成科。科目按時間順序一齊列，唔分組。",
+        "每科都有加咗字嘅圖，可以切返原畫面。圖上中文註解係之後加上嘅讀圖說明，唔係直播畫面原本已有嘅字。「原話」係英文轉寫，再附粵語對譯；「點樣讀」係我哋嘅說明，兩者分開。轉寫主要跟 faster-whisper large-v3-turbo（CPU，float32），並對照 YouTube 自動字幕（en-orig）；代碼同均線以畫面為準，並非逐字人工校對。",
+    ],
+    "notes_title": "注意事項",
+    "notes": [
+        "開場問候同網絡警告、中間屏幕配置、流動性、止蝕距離、VCP 成交量、成交活躍窗口同加倉惡性循環等問答，若冇對應走圖，都唔單獨成科。42:11–49:02 有一句喜歡突破後跟進、並提到生物科技，之後係快速翻圖，唔做成圖冊。",
+        "畫面睇唔到成交價、倉位大細或者損益，所以各科都唔寫死呢啲數字。提到嘅 240、0.3%、購買力或者連輸次數，只保留原話，唔當可複製嘅規則。",
+        "YouTube 自動字幕同 Whisper 都有聽錯代碼或用詞：例如 SNDK 聽成 sntk／SK short、VRT 聽成 VRTS／frt／futures／PRT、Qs 聽成 kills、SOXX 聽成 massive XX／meso xx／stock x、selling 聽成 styling、clustering 聽成 bustering、avoidable 聽成 affordable、shorts 聽成 shots、stop 聽成 stock、peers 聽成 pierce、anchored VWAP 聽成 coffee up。本站按畫面同較合理嘅一方更正，並喺該科附註說明。圖例多數冇印均線週期，提到嘅 9、21、20、50、150 係口中或者字幕講法。",
+        "講 Qs 在 50 EMA 時，分頁同報價係 SPY，圖上名稱卻寫 Invesco QQQ Trust。講下降 9 時，有一幅分頁寫 BMNR，水印同報價係 GLD。SPCX 畫面寫住 Space Exploration Technologies Corp，SNDK、GEV、ALAB 畫面寫住公司名，都只當圖上文字。聊天室「20 EMAs」兩邊字幕一致，可能係 21，但唔擅自改寫。",
+    ],
+    "disclaimer": "免責聲明：呢份係教育拆解，方便之後 review 讀圖方法，唔係投資建議，亦唔好當作買賣指示。",
+    "subjects": SUBJECTS,
+}
