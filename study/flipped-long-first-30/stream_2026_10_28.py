@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 
-BANNER = "呢份係教育拆解，方便之後 review 形態同位置嘅讀法，唔係投資建議。"
-DISCLAIMER = "免責聲明：呢份係教育拆解，唔係投資建議，亦唔好當作買賣指示。"
 YT = "https://www.youtube.com/watch?v=iMBI3ZcQ6sU"
 DATE = "2026年10月28日"
 STREAM_TITLE = "《SOXX short》"
@@ -56,7 +54,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("07:11–08:24"),
         "watch_label": "由 07:11 觀看直播片段",
         "watch_url": f"{YT}&t=431s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：因大市未見轉弱而平 UVXY，並在 SK Hynix 業績前拆走 SNDK 淡倉同已顯極強嘅 GEV。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "開場先交代昨日同今日開市前拆走嘅倉",
@@ -136,7 +133,6 @@ SUBJECTS: list[dict] = [
             "開場 03:12–07:10 係問候同網絡警告，冇獨立讀圖，唔單獨成科。",
             "畫面睇唔到成交價、倉位大細或者損益，所以唔寫死呢啲數字。",
         ],
-        "disclaimer": DISCLAIMER,
     },
 
     {
@@ -150,7 +146,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("08:24–08:38 · 其後 10:49、35:23"),
         "watch_label": "由 08:24 觀看直播片段",
         "watch_url": f"{YT}&t=504s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：VRT 裂口向上行入 50 EMA 同週線聚集均線，其後一分鐘升得太快令 240 限價未成交，稍後雖可淡但曝險已夠。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "先見到裂口入均線，之後成交唔到，再之後唔再加倉",
@@ -232,7 +227,6 @@ SUBJECTS: list[dict] = [
             "畫面睇唔到限價有冇掛出、成交價或者損益，所以 240 只保留原話。",
             "圖例冇印均線週期；50 EMA 同週線聚集均線以口中講法為準。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "dram-semis-under",
@@ -245,7 +239,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("08:39–09:13"),
         "watch_label": "由 08:39 觀看直播片段",
         "watch_url": f"{YT}&t=519s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：memory 名稱彈入週線均線，半導體例子仍在 50 同 21 之下；口中講 Qs 在 50 EMA，但當時畫面係 SPY。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "板塊有彈，但仍要睇均線位置",
@@ -325,7 +318,6 @@ SUBJECTS: list[dict] = [
             "Qs／SPY／圖上 QQQ 名稱三者不一致，係呢科最重要嘅字幕同畫面分歧。",
             "圖例冇印均線週期；50、21 以口中講法為準。",
         ],
-        "disclaimer": DISCLAIMER,
     },
 
     {
@@ -339,7 +331,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("19:21–20:15 · 其後 28:00"),
         "watch_label": "由 19:21 觀看直播片段",
         "watch_url": f"{YT}&t=1161s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：UVXY 向下跟進，佢唔後悔昨日已賣；其後想再做但購買力用完，提到 FOMC 波動只放止蝕。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "先確認賣出方向，之後想再做卻做唔到",
@@ -420,7 +411,6 @@ SUBJECTS: list[dict] = [
             "12:11–19:21 有一段幾乎冇對白；16:20–19:21 只有短答，唔單獨成科。",
             "畫面睇唔到倉位或者止蝕價，所以唔寫死呢啲數字。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "why-short-soxx",
@@ -433,7 +423,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("24:59–27:40"),
         "watch_label": "由 24:59 觀看直播片段",
         "watch_url": f"{YT}&t=1499s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：點解淡 SOXX。聊天室提出下降趨勢、未補缺口、多次裂口升入供給同均線；佢特別鍾意細旗高位嘅未補缺口，以及週線均線同大市。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "用觀眾答案，再指住圖上最關鍵嘅位置",
@@ -513,7 +502,6 @@ SUBJECTS: list[dict] = [
             "20 EMAs 係字幕原文，可能係 21；圖例冇印週期，唔把 20 當成已核對。",
             "anchored VWAP 同 YouTube 嘅 coffee up 有分歧，只作可能答案，唔標死圖上線段。",
         ],
-        "disclaimer": DISCLAIMER,
     },
 
     {
@@ -527,7 +515,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("28:58–33:00"),
         "watch_label": "由 28:58 觀看直播片段",
         "watch_url": f"{YT}&t=1738s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：同週一、週二比較，今日淡 SOXX 仲對齊週線阻力，所以係更好嘅入場。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "同一方向，但今日位置更好",
@@ -607,7 +594,6 @@ SUBJECTS: list[dict] = [
             "33:31 有觀眾問剛淡咗 LITE 同 SK Hynix，佢話今日淡倉日子幾好，甚至唔使開圖，但冇獨立拆呢兩隻，故唔另開一科。",
             "畫面睇唔到損益，提到嘅虧損只保留原話。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "spcx-weakness-avwap",
@@ -620,7 +606,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("30:08–30:42 · 其後 1:04:27"),
         "watch_label": "由 30:08 觀看直播片段",
         "watch_url": f"{YT}&t=1808s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：SPCX 昨日相對弱勢、今日向下跟進；被停後在開市區間回調入錨定 VWAP 再入。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "大市強嘅時候，相對弱勢先成為例外",
@@ -699,7 +684,6 @@ SUBJECTS: list[dict] = [
             "畫面標題 Space Exploration Technologies Corp 只當圖上文字，唔當成企業聲明。",
             "畫面睇唔到止蝕價、再入成交價或者連輸嘅實際損益。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "bounce-higher-shorts",
@@ -712,7 +696,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("38:25–39:45"),
         "watch_label": "由 38:25 觀看直播片段",
         "watch_url": f"{YT}&t=2305s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：大市急彈時，佢覺得愈高愈有利淡倉，同時若先前入場 UVXY 會即時被停。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "大市急彈，一邊睇淡倉位置，一邊回顧 UVXY",
@@ -771,7 +754,6 @@ SUBJECTS: list[dict] = [
             "38:25 之前有一段關於追價同等待回調嘅問答，冇對應獨立走圖，唔單獨成科。",
             "40:33 有人問 FOMC 策略，佢只答 I have a stop loss strategy，之後進入靜音翻圖，唔另開一科。",
         ],
-        "disclaimer": DISCLAIMER,
     },
 
     {
@@ -785,7 +767,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("1:02:27–1:04:27"),
         "watch_label": "由 1:02:27 觀看直播片段",
         "watch_url": f"{YT}&t=3747s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：SOXX 被停後再入。先講 5 分鐘跌破，隨即改口為假突破／upthrust 之後 1 分鐘收市低過 9 EMA。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "同一再入場，講法改得更精準",
@@ -843,7 +824,6 @@ SUBJECTS: list[dict] = [
             "49:02 至約 1:02 主要係屏幕配置、流動性、止蝕距離、VCP 成交量等問答，冇獨立讀圖教學，唔單獨成科。佢說過唔會睇成交量。",
             "觀眾原話有 so exist 等聽唔清之處；再入場以畫面 SOXX 同一分鐘圖為準。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "hold-declining-9",
@@ -856,7 +836,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("1:12:40–1:14:48"),
         "watch_label": "由 1:12:40 觀看直播片段",
         "watch_url": f"{YT}&t=4360s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：昨日大市繼續強，點解唔把淡倉全部平掉。最簡單理由係未有倉位違反下降中嘅 9 EMA。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "持有理由可以好簡單",
@@ -936,7 +915,6 @@ SUBJECTS: list[dict] = [
             "GLD／BMNR 分頁錯配係呢科主要畫面分歧。",
             "圖例冇印 9 嘅週期。畫面睇唔到逐隻倉位有冇真係持有。",
         ],
-        "disclaimer": DISCLAIMER,
     },
 
     {
@@ -950,7 +928,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("1:14:48–1:17:37"),
         "watch_label": "由 1:14:48 觀看直播片段",
         "watch_url": f"{YT}&t=4488s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：冇 traction 時會怎麼辦。最近一次係裂口向下後大約一個月橫行甚至輕微回撤；亦提起二、三月寬幅上落。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "冇 traction 嘅時段，往往靠縮細同少做",
@@ -987,7 +964,6 @@ SUBJECTS: list[dict] = [
             "呢幅係較長周期回顧，游標唔喺最新一根 K。",
             "權益曲線同回撤幅度畫面睇唔到，只保留原話。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "rules-vs-judgment",
@@ -1000,7 +976,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("1:17:37–1:26:18"),
         "watch_label": "由 1:17:37 觀看直播片段",
         "watch_url": f"{YT}&t=4657s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：掃描設定同點解唔用 AI 代勞揀股。最易講嘅規則係回調入 9 同 21，以及均線層層向下，但板塊、大市、同伴同價格行為會令佢跳過。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "規則容易寫，判斷先係佢想保留嘅部份",
@@ -1059,7 +1034,6 @@ SUBJECTS: list[dict] = [
             "掃描畫面條件只當圖上文字。口中 1 億美元成交額同畫面市值過濾唔好混為同一條。",
             "1:22–1:25 快速翻過 ZS、ASST、DOW、XYZ、SOFI、FIX 等，冇獨立分析點，唔做成圖冊。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "let-stops-work",
@@ -1072,7 +1046,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("1:26:28–1:28:18"),
         "watch_label": "由 1:26:28 觀看直播片段",
         "watch_url": f"{YT}&t=5188s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：收結時交俾止蝕決定。最差情況係大市繼續向上並強勢收市，呢輪 swing 或會重置，之後先再考慮做多。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "讓止蝕工作，並預先講最差情況",
@@ -1110,7 +1083,6 @@ SUBJECTS: list[dict] = [
             "0.3% 只保留原話，畫面睇唔到實際風險、止蝕價或者損益。",
             "收結前後仲掃過 SOXS、DRAM 等，冇新嘅獨立分析點，唔另開一科。",
         ],
-        "disclaimer": DISCLAIMER,
     },
 ]
 
@@ -1126,7 +1098,6 @@ STREAM = {
     "watch_label": "打開直播重播",
     "watch_url": YT,
     "footer_time": "開播時間 2026年10月28日 21:21（台北時間）。",
-    "banner": "呢份係教育拆解，方便之後 review 點樣用形態、位置同均線讀圖，唔係投資建議。",
     "card": "由開場到完結，有讀圖嘅段落按時間順序排。",
     "summary_kicker": "概要",
     "summary_title": "呢一場可以學嘅技術分析",
@@ -1141,6 +1112,5 @@ STREAM = {
         "YouTube 自動字幕同 Whisper 都有聽錯代碼或用詞：例如 SNDK 聽成 sntk／SK short、VRT 聽成 VRTS／frt／futures／PRT、Qs 聽成 kills、SOXX 聽成 massive XX／meso xx／stock x、selling 聽成 styling、clustering 聽成 bustering、avoidable 聽成 affordable、shorts 聽成 shots、stop 聽成 stock、peers 聽成 pierce、anchored VWAP 聽成 coffee up。本站按畫面同較合理嘅一方更正，並喺該科附註說明。圖例多數冇印均線週期，提到嘅 9、21、20、50、150 係口中或者字幕講法。",
         "講 Qs 在 50 EMA 時，分頁同報價係 SPY，圖上名稱卻寫 Invesco QQQ Trust。講下降 9 時，有一幅分頁寫 BMNR，水印同報價係 GLD。SPCX 畫面寫住 Space Exploration Technologies Corp，SNDK、GEV、ALAB 畫面寫住公司名，都只當圖上文字。聊天室「20 EMAs」兩邊字幕一致，可能係 21，但唔擅自改寫。",
     ],
-    "disclaimer": "免責聲明：呢份係教育拆解，方便之後 review 讀圖方法，唔係投資建議，亦唔好當作買賣指示。",
     "subjects": SUBJECTS,
 }

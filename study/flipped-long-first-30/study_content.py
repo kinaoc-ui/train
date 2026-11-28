@@ -4,7 +4,7 @@ Text is copied from the static HTML pages in this folder. Do not add fill
 prices, size, or P&L. FIRST_HALF is the opening 30 minutes of the 4 Nov 2026
 stream. SECOND_HALF is 30:00 through the end of that stream. The 3 Nov 2026
 stream lives in stream_2026_11_03.py, and the 2 Nov 2026 stream lives in
-stream_2026_11_02.py, and the 28 Oct 2026 stream lives in stream_2026_10_28.py. All four are listed in STREAMS, newest first. Each
+stream_2026_11_02.py, and the 28 Oct 2026 stream lives in stream_2026_10_28.py, and the 27 Oct 2026 stream lives in stream_2026_10_27.py. All five are listed in STREAMS, newest first. Each
 subject uses the same keys.
 """
 
@@ -15,6 +15,7 @@ from pathlib import Path
 from stream_2026_11_02 import STREAM as STREAM_2026_11_02
 from stream_2026_11_03 import STREAM as STREAM_2026_11_03
 from stream_2026_10_28 import STREAM as STREAM_2026_10_28
+from stream_2026_10_27 import STREAM as STREAM_2026_10_27
 
 YOUTUBE = "https://www.youtube.com/watch?v=NUT6d6Hvbmw"
 
@@ -24,22 +25,18 @@ HOME = {
     "title": "技術分析科目",
     "subtitle": "先揀一場直播",
     "meta": "Martin Luk",
-    "banner": "呢份係教育拆解，方便之後 review 點樣用形態、位置同均線讀圖，唔係投資建議。",
     "summary_kicker": "概要",
     "summary_title": "按直播日期入去",
     "summary": [
-        "先揀一場直播嘅日期，再睇嗰一場嘅科目。科目按時間順序排。而家收錄 2026年11月4日《Flipped long》、2026年11月3日《Adding shorts again》、2026年11月2日《DRAM fat finger》，同 2026年10月28日《SOXX short》。之後再加其他直播，只會喺呢度多一個日期，唔會把所有科目一次過列晒出嚟。",
+        "先揀一場直播嘅日期，再睇嗰一場嘅科目。科目按時間順序排。而家收錄 2026年11月4日《Flipped long》、2026年11月3日《Adding shorts again》、2026年11月2日《DRAM fat finger》、2026年10月28日《SOXX short》，同 2026年10月27日《Strong bounce》。之後再加其他直播，只會喺呢度多一個日期，唔會把所有科目一次過列晒出嚟。",
     ],
     "notes_title": "注意事項",
     "notes": [
         "每場直播嘅圖上中文註解係之後加上嘅讀圖說明，唔係直播畫面原本已有嘅字。「原話」係英文轉寫，再附粵語對譯；「點樣讀」係說明，兩者分開。",
         "畫面睇唔到成交價、倉位大細或者損益，所以各科都唔寫死呢啲數字。",
     ],
-    "disclaimer": "免責聲明：呢份係教育拆解，方便之後 review 讀圖方法，唔係投資建議，亦唔好當作買賣指示。",
 }
 
-_COMMON_BANNER = "呢份係教育拆解，方便之後 review 形態同位置嘅讀法，唔係投資建議。"
-_COMMON_DISCLAIMER = "免責聲明：呢份係教育拆解，唔係投資建議，亦唔好當作買賣指示。"
 
 FIRST_HALF: list[dict] = [
     {
@@ -53,7 +50,6 @@ FIRST_HALF: list[dict] = [
         "meta": "Martin Luk · 《Flipped long》 · 2026年11月4日 · 時間碼 03:18–03:42",
         "watch_label": "由 03:18 觀看直播片段",
         "watch_url": "https://www.youtube.com/watch?v=NUT6d6Hvbmw&t=198s",
-        "banner": _COMMON_BANNER,
         "summary_kicker": "概要",
         "summary_title": "計劃做 long 之前，先睇大市同弱勢板塊",
         "summary": [
@@ -131,7 +127,6 @@ FIRST_HALF: list[dict] = [
             "03:18 前後佢話 today is a little bit of rush，畫面確實快速翻過 BTC、HYPE、SOL 等，之後先較多次停喺 QQQ 同 SOXX。本頁只收有分析意思嘅兩幅日線，唔做翻圖圖冊。",
             "畫面睇唔到成交價、倉位大細或者損益，所以唔寫死呢啲數字。",
         ],
-        "disclaimer": _COMMON_DISCLAIMER,
     },
     {
         "id": "crypto-ema",
@@ -144,7 +139,6 @@ FIRST_HALF: list[dict] = [
         "meta": "Martin Luk · 《Flipped long》 · 2026年11月4日 · 時間碼 06:52–06:59",
         "watch_label": "由 06:52 觀看直播片段",
         "watch_url": "https://www.youtube.com/watch?v=NUT6d6Hvbmw&t=412s",
-        "banner": _COMMON_BANNER,
         "summary_kicker": "概要",
         "summary_title": "佢鍾意呢段加密嘅 undercutting rally",
         "summary": [
@@ -221,7 +215,6 @@ FIRST_HALF: list[dict] = [
             "呢一句好短，而且冇講倉位或者買賣價，本頁只拆佢指住嘅形態同均線位置。",
             "06:15 附近曾經出現 ETH 1 小時，09:00 附近亦有加密週線，但呢句對白對應嘅畫面係 BTC 週線同日線。",
         ],
-        "disclaimer": _COMMON_DISCLAIMER,
     },
     {
         "id": "soxx-weekly",
@@ -234,7 +227,6 @@ FIRST_HALF: list[dict] = [
         "meta": "Martin Luk · 《Flipped long》 · 2026年11月4日 · 時間碼 07:59–08:11",
         "watch_label": "由 07:59 觀看直播片段",
         "watch_url": "https://www.youtube.com/watch?v=NUT6d6Hvbmw&t=479s",
-        "banner": _COMMON_BANNER,
         "summary_kicker": "概要",
         "summary_title": "想 cover，但條件寫喺週線 50 EMA",
         "summary": [
@@ -279,7 +271,6 @@ FIRST_HALF: list[dict] = [
             "講呢句之前，畫面曾經出現 SOXS（3 倍淡半導體 ETF）同 SOXX 日線，但對白明確講嘅係週線 50 EMA，所以主圖用 08:05 嘅 SOXX 週線。",
             "畫面睇唔到成交價、倉位大細或者損益，所以唔寫死呢啲數字。",
         ],
-        "disclaimer": _COMMON_DISCLAIMER,
     },
     {
         "id": "mstr",
@@ -292,7 +283,6 @@ FIRST_HALF: list[dict] = [
         "meta": "Martin Luk · 《Flipped long》 · 2026年11月4日 · 時間碼 08:43–09:13",
         "watch_label": "由 08:43 觀看直播片段",
         "watch_url": "https://www.youtube.com/watch?v=NUT6d6Hvbmw&t=523s",
-        "banner": _COMMON_BANNER,
         "summary_kicker": "概要",
         "summary_title": "似 pullback short，但今日可以兩邊都行",
         "summary": [
@@ -369,7 +359,6 @@ FIRST_HALF: list[dict] = [
             "08:49 之後畫面開始翻加密品種，但對白仍然收束緊 MSTR 呢段。本頁唔把之後嘅翻圖算入呢科。",
             "畫面睇唔到成交價、倉位大細或者損益，所以唔寫死呢啲數字。",
         ],
-        "disclaimer": _COMMON_DISCLAIMER,
     },
     {
         "id": "market-condition",
@@ -382,7 +371,6 @@ FIRST_HALF: list[dict] = [
         "meta": "Martin Luk · 《Flipped long》 · 2026年11月4日 · 時間碼 22:43–24:19",
         "watch_label": "由 22:43 觀看直播片段",
         "watch_url": "https://www.youtube.com/watch?v=NUT6d6Hvbmw&t=1363s",
-        "banner": _COMMON_BANNER,
         "summary_kicker": "概要",
         "summary_title": "呢段可以只係跌勢入面嘅反彈",
         "summary": [
@@ -439,7 +427,6 @@ FIRST_HALF: list[dict] = [
             "23:44 佢曾經把 QQQ 日線再拉遠睇更長歷史；本頁用 23:35 呢幅較清楚見到近期跌勢同反彈嘅圖做主圖。",
             "講完呢段之後，大約 26:15 開始轉去 XAUUSD，就係下一科「平掉金銀淡倉」。",
         ],
-        "disclaimer": _COMMON_DISCLAIMER,
     },
     {
         "id": "gold-silver",
@@ -452,7 +439,6 @@ FIRST_HALF: list[dict] = [
         "meta": "Martin Luk · 《Flipped long》 · 2026年11月4日 · 時間碼 27:37–29:38 · 全程重播約 1:04:14",
         "watch_label": "由 27:37 觀看直播片段",
         "watch_url": "https://www.youtube.com/watch?v=NUT6d6Hvbmw&t=1657s",
-        "banner": _COMMON_BANNER,
         "summary_kicker": "概要",
         "summary_title": "佢唔係預測黃金見底",
         "summary": [
@@ -602,7 +588,6 @@ FIRST_HALF: list[dict] = [
             "原話來自機器轉寫（faster-whisper，並對照 YouTube 自動字幕），並非逐字人工校對。轉寫本身註明 “overnight section” 按語境應為 overnight session。",
             "本頁只拆金銀淡倉呢一段（約 27:37–29:38），冇混入其他系統或者規則。",
         ],
-        "disclaimer": "免責聲明：呢份係教育拆解，方便之後 review 點樣用形態同位置讀圖，唔係投資建議，亦唔好當作買賣指示。",
     },
 ]
 
@@ -621,7 +606,6 @@ SECOND_HALF: list[dict] = [
         "meta": "Martin Luk · 《Flipped long》 · 2026年11月4日 · 時間碼 31:06–32:37",
         "watch_label": "由 31:06 觀看直播片段",
         "watch_url": "https://www.youtube.com/watch?v=NUT6d6Hvbmw&t=1866s",
-        "banner": "呢份係教育拆解，方便之後 review 形態、位置同均線嘅讀法，唔係投資建議。",
         "summary_kicker": "概要",
         "summary_title": "今日低位本來可以多 cover 一啲",
         "summary": [
@@ -762,7 +746,6 @@ SECOND_HALF: list[dict] = [
             "32:15 之後有一段靜音翻圖（NQ、RTY、AXTI、SK Hynix 等），冇再講分析，唔算入呢科。",
             "本頁只拆呢段淡倉回顧（約 31:06–32:37），冇混入其他系統或者規則。",
         ],
-        "disclaimer": "免責聲明：呢份係教育拆解，方便之後 review 讀圖方法，唔係投資建議，亦唔好當作買賣指示。",
     },
     {
         "id": "gold-21",
@@ -775,7 +758,6 @@ SECOND_HALF: list[dict] = [
         "meta": "Martin Luk · 《Flipped long》 · 2026年11月4日 · 時間碼 33:29–35:29",
         "watch_label": "由 33:29 觀看直播片段",
         "watch_url": "https://www.youtube.com/watch?v=NUT6d6Hvbmw&t=2009s",
-        "banner": "呢份係教育拆解，方便之後 review 形態、位置同均線嘅讀法，唔係投資建議。",
         "summary_kicker": "概要",
         "summary_title": "第一次碰到 21，唔等於可以即淡",
         "summary": [
@@ -856,7 +838,6 @@ SECOND_HALF: list[dict] = [
             "35:29 之後畫面先轉天然氣／YM 等，唔算入呢科。",
             "本頁只拆黃金呢條問答（約 33:29–35:29），冇混入其他系統或者規則。",
         ],
-        "disclaimer": "免責聲明：呢份係教育拆解，方便之後 review 讀圖方法，唔係投資建議，亦唔好當作買賣指示。",
     },
     {
         "id": "crwd-thesis",
@@ -869,7 +850,6 @@ SECOND_HALF: list[dict] = [
         "meta": "Martin Luk · 《Flipped long》 · 2026年11月4日 · 時間碼 36:21–39:41",
         "watch_label": "由 36:21 觀看直播片段",
         "watch_url": "https://www.youtube.com/watch?v=NUT6d6Hvbmw&t=2181s",
-        "banner": "呢份係教育拆解，方便之後 review 形態、位置同均線嘅讀法，唔係投資建議。",
         "summary_kicker": "概要",
         "summary_title": "計劃由想淡，轉做 bounce / mean reversion long",
         "summary": [
@@ -979,7 +959,6 @@ SECOND_HALF: list[dict] = [
             "39:41 之後佢同 chat 講「I'm selling Crowd / Crowd looks bearish」，自己解釋係想試吓有冇 algo 讀緊直播，並話 easily proven that's not true、just test it out in the market。呢段係玩笑／測試，唔係淡倉方法，所以唔獨立成科，亦唔當成短線賣出教學。",
             "本頁只拆 Crowd long 論證（約 36:21–39:41），Coin long 見下一科之後嘅科目十一。冇混入其他系統或者規則。",
         ],
-        "disclaimer": "免責聲明：呢份係教育拆解，方便之後 review 讀圖方法，唔係投資建議，亦唔好當作買賣指示。",
     },
     {
         "id": "crwd-entry",
@@ -992,7 +971,6 @@ SECOND_HALF: list[dict] = [
         "meta": "Martin Luk · 《Flipped long》 · 2026年11月4日 · 時間碼 43:59–45:25",
         "watch_label": "由 43:59 觀看直播片段",
         "watch_url": "https://www.youtube.com/watch?v=NUT6d6Hvbmw&t=2639s",
-        "banner": "呢份係教育拆解，方便之後 review 形態、位置同均線嘅讀法，唔係投資建議。",
         "summary_kicker": "概要",
         "summary_title": "自己都覺得買得遲少少",
         "summary": [
@@ -1073,7 +1051,6 @@ SECOND_HALF: list[dict] = [
             "45:25 之後佢補「no matter what I just have to get in」，然後先轉去講 Coin。45:45–47:45 附近有 SPCE 等靜音翻圖，唔算入呢科。",
             "本頁只拆 Crowd 入場讀法（約 43:59–45:25），冇混入其他系統或者規則。",
         ],
-        "disclaimer": "免責聲明：呢份係教育拆解，方便之後 review 讀圖方法，唔係投資建議，亦唔好當作買賣指示。",
     },
     {
         "id": "coin-crypto",
@@ -1086,7 +1063,6 @@ SECOND_HALF: list[dict] = [
         "meta": "Martin Luk · 《Flipped long》 · 2026年11月4日 · 時間碼 48:03–50:31",
         "watch_label": "由 48:03 觀看直播片段",
         "watch_url": "https://www.youtube.com/watch?v=NUT6d6Hvbmw&t=2883s",
-        "banner": "呢份係教育拆解，方便之後 review 形態、位置同均線嘅讀法，唔係投資建議。",
         "summary_kicker": "概要",
         "summary_title": "加密先講位置，再講點解入 COIN",
         "summary": [
@@ -1257,7 +1233,6 @@ SECOND_HALF: list[dict] = [
             "YouTube 把「BMNR」聽成「BM and Apple」。畫面支持 BMNR；Apple 只列作字幕不確定，唔做圖。",
             "本頁只拆 Coin long 同加密呢段（約 48:03–50:31，並附 56:16 補充），冇混入其他系統或者規則。",
         ],
-        "disclaimer": "免責聲明：呢份係教育拆解，方便之後 review 讀圖方法，唔係投資建議，亦唔好當作買賣指示。",
     },
     {
         "id": "tsla",
@@ -1270,7 +1245,6 @@ SECOND_HALF: list[dict] = [
         "meta": "Martin Luk · 《Flipped long》 · 2026年11月4日 · 時間碼 51:10–52:23",
         "watch_label": "由 51:10 觀看直播片段",
         "watch_url": "https://www.youtube.com/watch?v=NUT6d6Hvbmw&t=3070s",
-        "banner": "呢份係教育拆解，方便之後 review 形態、位置同均線嘅讀法，唔係投資建議。",
         "summary_kicker": "概要",
         "summary_title": "星期一講過嘅計劃，佢覺得做得好",
         "summary": [
@@ -1350,7 +1324,6 @@ SECOND_HALF: list[dict] = [
             "52:25 之後轉去問書、新聞，佢回應「stick to the charts」，唔再講圖，所以唔算入呢科。",
             "本頁只拆 Tesla 呢段（約 51:10–52:23），冇混入其他系統或者規則。",
         ],
-        "disclaimer": "免責聲明：呢份係教育拆解，方便之後 review 讀圖方法，唔係投資建議，亦唔好當作買賣指示。",
     },
     {
         "id": "choppy-cover",
@@ -1363,7 +1336,6 @@ SECOND_HALF: list[dict] = [
         "meta": "Martin Luk · 《Flipped long》 · 2026年11月4日 · 時間碼 57:59–1:00:15，並附 1:02:23–1:03:58 收結",
         "watch_label": "由 57:59 觀看直播片段",
         "watch_url": "https://www.youtube.com/watch?v=NUT6d6Hvbmw&t=3479s",
-        "banner": "呢份係教育拆解，方便之後 review 形態、位置同均線嘅讀法，唔係投資建議。",
         "summary_kicker": "概要",
         "summary_title": "同意市況可能仍然 choppy，短線淡倉未必再划算",
         "summary": [
@@ -1474,7 +1446,6 @@ SECOND_HALF: list[dict] = [
             "59:30 嘅 GLW、1:03:20 嘅 MDB 只係快速翻圖，冇獨立分析點，故唔出圖。",
             "本頁只拆市況同淡倉管理呢段（約 57:59–1:00:15，並附 1:02:23–1:03:58 收結），冇混入其他系統或者規則。",
         ],
-        "disclaimer": "免責聲明：呢份係教育拆解，方便之後 review 讀圖方法，唔係投資建議，亦唔好當作買賣指示。",
     },
 ]
 
@@ -1493,7 +1464,6 @@ STREAMS: list[dict] = [
         "meta": "Martin Luk · 開播 22:26（台北時間） · 全程重播約 1:04:14",
         "watch_label": "打開直播重播",
         "watch_url": YOUTUBE,
-        "banner": "呢份係教育拆解，方便之後 review 點樣用形態、位置同均線讀圖，唔係投資建議。",
         "card": "由開場到完結，有讀圖嘅段落按時間順序排。",
         "summary_kicker": "概要",
         "summary_title": "呢一場可以學嘅技術分析",
@@ -1508,12 +1478,12 @@ STREAMS: list[dict] = [
             "畫面睇唔到成交價、倉位大細或者損益，所以各科都唔寫死呢啲數字。",
             "YouTube 自動字幕有時會把 MSTR 聽成 MSTL、把 50 EMA 聽成 “50-year may” 或者 “15 year maybe”；Whisper 有時把 longs 聽成 loans、mean reversion 聽成 mini version、cover the shorts 聽成 shots。本站按畫面同較合理嘅一方更正，並喺該科附註說明。",
         ],
-        "disclaimer": "免責聲明：呢份係教育拆解，方便之後 review 讀圖方法，唔係投資建議，亦唔好當作買賣指示。",
         "subjects": SUBJECTS,
     },
     STREAM_2026_11_03,
     STREAM_2026_11_02,
     STREAM_2026_10_28,
+    STREAM_2026_10_27,
 ]
 
 
