@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 
-BANNER = "呢份係教育拆解，方便之後 review 形態同位置嘅讀法，唔係投資建議。"
-DISCLAIMER = "免責聲明：呢份係教育拆解，唔係投資建議，亦唔好當作買賣指示。"
 YT = "https://www.youtube.com/watch?v=CTHrTYHqZTw"
 DATE = "2026年11月2日"
 STREAM_TITLE = "《DRAM fat finger》"
@@ -56,7 +54,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("05:08–15:17"),
         "watch_label": "由 05:08 觀看直播片段",
         "watch_url": f"{YT}&t=308s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：週末 leader scan 的方法，以及軟件、生物科技、能源、零售等領先板塊。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "先用週末掃描，再講而家邊啲板塊較領先",
@@ -114,7 +111,6 @@ SUBJECTS: list[dict] = [
             "05:57 至 13:54 幾乎冇對白，只係沿名單翻圖，本站唔做成圖冊。",
             "畫面睇唔到成交價、倉位大細或者損益，所以唔寫死呢啲數字。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "crwd-potential",
@@ -127,7 +123,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("16:05–17:58"),
         "watch_label": "由 16:05 觀看直播片段",
         "watch_url": f"{YT}&t=965s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：把 Tesla 同 CrowdStrike 列作潛在做多，但想大市再向下延伸、Qs 靠近週線 50 EMA。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "兩隻相對突出，但想先多啲恐慌先做多",
@@ -207,7 +202,6 @@ SUBJECTS: list[dict] = [
             "圖例冇印均線週期。提到嘅 50 EMA 係口中講法，註解只指標位置。",
             "畫面睇唔到成交價、倉位大細或者損益，所以唔寫死呢啲數字。",
         ],
-        "disclaimer": DISCLAIMER,
     },
 
     {
@@ -221,7 +215,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("21:15–23:31"),
         "watch_label": "由 21:15 觀看直播片段",
         "watch_url": f"{YT}&t=1275s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：半導體 ETF 連續三日裂口向上行入下降均線，以及週線 9 同 50 的觀察。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "反彈直上三日，行入下降均線，仍然偏淡",
@@ -301,7 +294,6 @@ SUBJECTS: list[dict] = [
             "圖例冇印均線週期。9 同 50 係口中講法。",
             "畫面睇唔到成交價、倉位大細或者損益，所以唔寫死呢啲數字。被停多次只保留原話。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "soxx-thursday",
@@ -314,7 +306,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("23:37–27:38"),
         "watch_label": "由 23:37 觀看直播片段",
         "watch_url": f"{YT}&t=1417s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：週四半導體淡倉等候彈入未補缺口與下降小時 9，並在 15 分鐘圖入場。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "低開跌入日線 9 唔淡，等彈入缺口先做",
@@ -393,7 +384,6 @@ SUBJECTS: list[dict] = [
             "呢一段多數係回放週四嘅圖，不是當時即場下單畫面。倉位、成交價同損益都睇唔到，唔寫死。",
             "YouTube 把 Qs、15-minute resistance 聽錯；本站按畫面更正。",
         ],
-        "disclaimer": DISCLAIMER,
     },
 
     {
@@ -407,7 +397,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("28:28–30:22"),
         "watch_label": "由 28:28 觀看直播片段",
         "watch_url": f"{YT}&t=1708s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：原油急跌後，價格已到口中的 21，計劃等反彈再處理。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "急跌之後，唔想追住低位賣出",
@@ -484,7 +473,6 @@ SUBJECTS: list[dict] = [
             "畫面係 USOIL（WTI 原油 CFD），口中亦叫 oil。唔寫死成交價、倉位或者損益。",
             "圖例冇印均線週期。9 同 21 係口中講法。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "goog-indices",
@@ -497,7 +485,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("33:00–36:56"),
         "watch_label": "由 33:00 觀看直播片段",
         "watch_url": f"{YT}&t=1980s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：GOOG 月線超賣與週線 150，以及指數尚未向下延伸、Russell 裂口入阻力。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "個股可以等更好位置，大市都要配合",
@@ -596,7 +583,6 @@ SUBJECTS: list[dict] = [
             "YouTube 寫 “purple longs”，本站按上下文寫 pullback longs，並標明不確定。",
             "畫面睇唔到成交價、倉位大細或者損益，所以唔寫死呢啲數字。",
         ],
-        "disclaimer": DISCLAIMER,
     },
 
     {
@@ -610,7 +596,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("37:35–49:12"),
         "watch_label": "由 37:35 觀看直播片段",
         "watch_url": f"{YT}&t=2255s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：今次下跌與較早回調的分別，以及 11 月 25 日附近淡區的檢討。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "加速、廣度同領先股轉弱，令今次同溫和回調唔同",
@@ -707,7 +692,6 @@ SUBJECTS: list[dict] = [
             "升幅、倉位同舊交易只保留原話，本站唔核對歷史回報或者 P&L。",
             "SOFI 只在對白出現，當時冇獨立走圖，故唔出圖。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "profit-taking",
@@ -720,7 +704,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("49:35–51:05"),
         "watch_label": "由 49:35 觀看直播片段",
         "watch_url": f"{YT}&t=2975s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：週五在舊低附近平 COIN 淡倉，並平掉約三分一半導體與 memory 淡倉。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "接近舊低就平一部分，而唔係等均線",
@@ -796,7 +779,6 @@ SUBJECTS: list[dict] = [
             "所有價位同比例都只係原話，畫面冇成交單，本站唔寫死。",
             "YouTube 把 SOXS 聽錯；本站按畫面更正。",
         ],
-        "disclaimer": DISCLAIMER,
     },
 
     {
@@ -810,7 +792,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("52:47–56:13"),
         "watch_label": "由 52:47 觀看直播片段",
         "watch_url": f"{YT}&t=3167s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：為何在週線 50 EMA 之上不打算把淡倉擺得很長。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "未跌破週線 50，就未係擺長淡倉嘅最好時機",
@@ -846,7 +827,6 @@ SUBJECTS: list[dict] = [
             "中間有一段關於算法交易嘅問答，冇讀圖，唔單獨成科。",
             "圖例冇印均線週期。畫面睇唔到成交價或者倉位。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "dram-fat-finger",
@@ -859,7 +839,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("1:00:26–1:06:18"),
         "watch_label": "由 1:00:26 觀看直播片段",
         "watch_url": f"{YT}&t=3626s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：Roundhill Memory ETF（DRAM）淡倉因賣出止蝕下錯而加倉，屬 fat finger。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "呢單 memory short，係陰錯陽差嘅 fat finger",
@@ -940,7 +919,6 @@ SUBJECTS: list[dict] = [
             "回撤、倍數、大約時間都只係原話，畫面睇唔到成交單、倉位或者損益，唔寫死。",
             "提到 IBKR 只係原話裡嘅券商名稱，唔當成任何機構聲明。之後有人問 hotkey 下單，佢說冇熱鍵、止蝕同入場分開下，呢句唔單獨成科。",
         ],
-        "disclaimer": DISCLAIMER,
     },
 
     {
@@ -954,7 +932,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("1:07:27–1:08:18"),
         "watch_label": "由 1:07:27 觀看直播片段",
         "watch_url": f"{YT}&t=4047s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：太陽能股若已向下延伸，較想等週線 9 而不是追淡。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "唔鍾意在已經向下延伸之後先淡",
@@ -1030,7 +1007,6 @@ SUBJECTS: list[dict] = [
             "圖例冇印均線週期。20 日均係問者提出，週線 9 係佢嘅回應。",
             "畫面睇唔到成交價或者倉位。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "spcx-swing",
@@ -1043,7 +1019,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("1:10:12–1:11:41"),
         "watch_label": "由 1:10:12 觀看直播片段",
         "watch_url": f"{YT}&t=4212s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：SPCX 或可擺稍長，但在週線 50 之上仍擔心 V 型反彈。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "個股未延伸，但大市位置令佢仍然謹慎",
@@ -1100,7 +1075,6 @@ SUBJECTS: list[dict] = [
             "YouTube 把 BMNR 聽成 BML，本站按畫面更正。",
             "畫面睇唔到成交價或者倉位。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "xag-xau",
@@ -1113,7 +1087,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("1:12:10–1:14:32"),
         "watch_label": "由 1:12:10 觀看直播片段",
         "watch_url": f"{YT}&t=4330s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：白銀已到週線 150 並已部分平倉，黃金仍高於 150 的處理構想。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "銀先到目標帶，金則仍在更高位置",
@@ -1169,7 +1142,6 @@ SUBJECTS: list[dict] = [
             "畫面係 XAGUSD、XAUUSD，口中叫 silver、gold。15% 只係原話約數。",
             "圖例冇印均線週期。1:12:08–1:12:12 曾快速閃過 AXTI、SNDK、SLV，唔單獨成科。",
         ],
-        "disclaimer": DISCLAIMER,
     },
 
     {
@@ -1183,7 +1155,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("1:16:53–1:17:57"),
         "watch_label": "由 1:16:53 觀看直播片段",
         "watch_url": f"{YT}&t=4613s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：防守板塊向上延伸後，多數會均值回歸。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "防守板塊延伸之後，多數會回調再整固",
@@ -1237,7 +1208,6 @@ SUBJECTS: list[dict] = [
         "notes": [
             "只係板塊觀察，冇講入場或者平倉。畫面睇唔到成交價。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "uvxy-aggressive",
@@ -1250,7 +1220,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("1:19:32–1:19:48"),
         "watch_label": "由 1:19:32 觀看直播片段",
         "watch_url": f"{YT}&t=4772s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：UVXY 位置上或可做多，但波動太大，不會交易。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "位置同會唔會做，係兩件事",
@@ -1284,7 +1253,6 @@ SUBJECTS: list[dict] = [
         "notes": [
             "短短十數秒，冇講入場價或者倉位。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "tsla-fcp",
@@ -1297,7 +1265,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("1:20:16–1:21:28"),
         "watch_label": "由 1:20:16 觀看直播片段",
         "watch_url": f"{YT}&t=4816s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：Tesla 在回調中表現突出，週線為多年底，更好的做多位在回落到匯合均線並與指數一齊延伸。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "先肯定相對強勢，再講更好嘅位置仍在下面",
@@ -1354,7 +1321,6 @@ SUBJECTS: list[dict] = [
             "16:05 已把 Tesla 列作 potential long，當時未出示 Tesla 圖。型態名稱以畫面為準，唔寫死。",
             "畫面睇唔到成交價或者倉位。",
         ],
-        "disclaimer": DISCLAIMER,
     },
 
     {
@@ -1368,7 +1334,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("1:27:01–1:28:54"),
         "watch_label": "由 1:27:01 觀看直播片段",
         "watch_url": f"{YT}&t=5221s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：NVDA 看來偏弱，在週線 50 之上做多要小心；若失守 50 再築底會很難看。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "領袖股延伸過後，創新高機會愈嚟愈細",
@@ -1404,7 +1369,6 @@ SUBJECTS: list[dict] = [
             "1:22–1:23 有一段淡倉偏在弱勢平、做多或會跟 9／21 嘅問答，當時冇對應走圖，唔單獨成科。1:38–1:46 風險同倉位增長問答同樣冇圖，唔獨立成科。",
             "圖例冇印均線週期。畫面睇唔到成交價。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "btc-hold-21",
@@ -1417,7 +1381,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("1:52:34–1:54:13"),
         "watch_label": "由 1:52:34 觀看直播片段",
         "watch_url": f"{YT}&t=6754s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：Bitcoin 若守住週線 21 或未能跌破日線 150，或可做多，但現價行為未令他信服。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "條件未滿足之前，唔會因為回調到均線就做多",
@@ -1473,7 +1436,6 @@ SUBJECTS: list[dict] = [
             "畫面係 BTCUSDT.P（Binance 永續）。YouTube 把 21 EMA 聽成 21 year。",
             "圖例冇印均線週期。1:50 前後閃過 TEM，只係一句 “doing really nice”，唔單獨成科。2:04 中期選舉問答冇圖，唔獨立成科。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "lite-failed",
@@ -1486,7 +1448,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("2:08:31–2:09:32"),
         "watch_label": "由 2:08:31 觀看直播片段",
         "watch_url": f"{YT}&t=7511s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：LITE 失敗突破與上影，其後裂開並行向 150 EMA 之下。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "失敗突破之後，再出大升勢嘅機會下降",
@@ -1543,7 +1504,6 @@ SUBJECTS: list[dict] = [
             "YouTube 把 LITE 聽成 lights，把 failed breakout 聽成 belt breakout。本站按畫面更正。",
             "圖例冇印均線週期。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "afrm-breakout",
@@ -1556,7 +1516,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("2:10:27–2:10:43"),
         "watch_label": "由 2:10:27 觀看直播片段",
         "watch_url": f"{YT}&t=7627s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：Affirm（AFRM）日線與週線突破整齊。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "今日有一隻突破好整齊",
@@ -1611,7 +1570,6 @@ SUBJECTS: list[dict] = [
         "notes": [
             "字幕把 AFRM 聽成 “F has”。本站按畫面更正，不是 Ford。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "hold-shorts",
@@ -1624,7 +1582,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("2:17:20–2:18:26"),
         "watch_label": "由 2:17:20 觀看直播片段",
         "watch_url": f"{YT}&t=8040s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：大市強彈入未補缺口，但強勢股範圍有限，週線尚未脫險，今日仍會持有淡倉。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "有反彈，唔等於已經轉勢",
@@ -1679,7 +1636,6 @@ SUBJECTS: list[dict] = [
             "2:17:40 前後曾快速翻過 TEAM、軟件 ETF 等，唔單獨成科。",
             "畫面睇唔到成交價或者倉位。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "usoil-exit",
@@ -1692,7 +1648,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("2:18:29–2:19:54"),
         "watch_label": "由 2:18:29 觀看直播片段",
         "watch_url": f"{YT}&t=8109s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：原油已明顯低過 9 EMA，傾向等待小時 9 反抽或在反彈賣出，不會為週線 9 長拖。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "已經延伸之後，離場優先於再擺更長",
@@ -1749,7 +1704,6 @@ SUBJECTS: list[dict] = [
             "字幕把 9 EMA 聽成 nine year、把 V-shaped 聽成 feedip。本站按上下文同 Whisper 較清楚嘅一方更正。",
             "圖例冇印均線週期。睇唔到成交價或者倉位。",
         ],
-        "disclaimer": DISCLAIMER,
     },
     {
         "id": "hynix-bounce",
@@ -1762,7 +1716,6 @@ SUBJECTS: list[dict] = [
         "meta": _meta("2:20:25–2:23:28"),
         "watch_label": "由 2:20:25 觀看直播片段",
         "watch_url": f"{YT}&t=8225s",
-        "banner": BANNER,
         "description": "Martin Luk 直播拆解：SK hynix 可以是淡的候選，但仍在彈入下降 9；大市已有少少向下延伸，因此謹慎。教育用途。",
         "summary_kicker": "概要",
         "summary_title": "個股可以係淡，大市位置卻叫人收斂",
@@ -1821,7 +1774,6 @@ SUBJECTS: list[dict] = [
             "YouTube／Whisper 對代碼都有聽錯，本站按畫面更正。",
             "畫面睇唔到成交價、倉位或者損益。今日冇交易係原話。",
         ],
-        "disclaimer": DISCLAIMER,
     },
 ]
 
@@ -1835,7 +1787,6 @@ STREAM: dict = {
     "meta": "Martin Luk · 開播 21:11（台北時間） · 全程重播約 2:23:38",
     "watch_label": "打開直播重播",
     "watch_url": YT,
-    "banner": "呢份係教育拆解，方便之後 review 點樣用形態、位置同均線讀圖，唔係投資建議。",
     "card": "Martin Luk · 開播 21:11（台北時間） · 全程重播約 2:23:38。由開場到完結，有讀圖嘅段落按時間順序排。",
     "footer_time": "開播時間 2026年11月2日 21:11（台北時間）。",
     "summary_kicker": "概要",
@@ -1852,6 +1803,5 @@ STREAM: dict = {
         "YouTube 自動字幕同 Whisper 都有聽錯代碼或均線：例如 DRAM 聽成 DM／RAM、SOXS 聽成 exo excess 或 so excess、LITE 聽成 lights、AFRM 聽成 “F has”、BMNR 聽成 BML、SK Hynix 聽成 Heinix、9 EMA 聽成 9A／nine year、V-shaped 聽成 feedip、Crowd 聽成口語 crowd。本站按畫面同較合理嘅一方更正，並喺該科附註說明。圖例多數冇印均線週期，提到嘅 9、21、50、150 係口中講法。",
         "SPCX 畫面寫住 Space Exploration Technologies Corp，SK hynix 畫面寫住公司名同 000660（KRX），都只當圖上文字，唔當成企業聲明。提到 IBKR 只係原話裡嘅券商名稱。",
     ],
-    "disclaimer": "免責聲明：呢份係教育拆解，方便之後 review 讀圖方法，唔係投資建議，亦唔好當作買賣指示。",
     "subjects": SUBJECTS,
 }

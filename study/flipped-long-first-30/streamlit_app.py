@@ -249,7 +249,8 @@ def _header(page: dict) -> None:
     st.markdown(f'<p class="meta">{_html(page["meta"])}</p>', unsafe_allow_html=True)
     if page.get("watch_url"):
         st.link_button(page["watch_label"], page["watch_url"])
-    st.markdown(f'<p class="banner">{_html(page["banner"])}</p>', unsafe_allow_html=True)
+    if page.get("banner"):
+        st.markdown(f'<p class="banner">{_html(page["banner"])}</p>', unsafe_allow_html=True)
 
 
 def _summary(page: dict) -> None:
@@ -268,7 +269,8 @@ def _notes(page: dict) -> None:
     st.header(page["notes_title"])
     for note in page["notes"]:
         st.markdown(f"- {note}")
-    st.markdown(f'<p class="disclaimer">{_html(page["disclaimer"])}</p>', unsafe_allow_html=True)
+    if page.get("disclaimer"):
+        st.markdown(f'<p class="disclaimer">{_html(page["disclaimer"])}</p>', unsafe_allow_html=True)
 
 
 def _render_home() -> None:
@@ -402,9 +404,7 @@ def _render_subject(subject: dict) -> None:
         _render_chart(subject["id"], index, chart, st.session_state[flag])
     _notes(subject)
     _pager(subject)
-    stream = content.stream_for_subject(subject["id"])
-    aired = (stream or {}).get("footer_time") or "開播時間 2026年11月4日 22:26（台北時間）。"
-    st.caption(f"{aired}直播連結需要上網。")
+    st.caption("開播時間 2026年11月4日 22:26（台北時間）。直播連結需要上網。")
 
 
 def _subject_label(subject_id: str) -> str:
@@ -438,7 +438,6 @@ def _pager(subject: dict) -> None:
 
 
 def _sidebar(stream: dict | None) -> None:
-    st.sidebar.caption("教育拆解，唔係投資建議。")
     if stream is None:
         st.sidebar.markdown("**直播目錄**")
         st.sidebar.caption("先揀一場直播嘅日期。")

@@ -8,7 +8,7 @@ Clone 或下載之後，用瀏覽器打開 `study/flipped-long-first-30/index.ht
 
 ## Streamlit
 
-教學內容同靜態版相同。第一屏係直播目錄，按日期揀一場；而家有 2026年11月4日《Flipped long》、2026年11月3日《Adding shorts again》、2026年11月2日《DRAM fat finger》，同 2026年10月28日《SOXX short》，最新日期排前。入去之後先至係嗰一場嘅科目，按時間順序一齊列，唔分組。圖用呢個資料夾入面現有嘅註解圖同原畫面。`study_content.py` 用 `STREAMS` 加新日期；11月4日嘅科目仍然由 `FIRST_HALF` 同 `SECOND_HALF` 拼出，11月3日嘅科目喺 `stream_2026_11_03.py`，11月2日嘅科目喺 `stream_2026_11_02.py`，10月28日嘅科目喺 `stream_2026_10_28.py`。
+教學內容同靜態版相同。第一屏係直播目錄，按日期揀一場；而家有 2026年11月4日《Flipped long》、2026年11月3日《Adding shorts again》、2026年11月2日《DRAM fat finger》、2026年10月28日《SOXX short》，同 2026年10月27日《Strong bounce》，最新日期排前。入去之後先至係嗰一場嘅科目，按時間順序一齊列，唔分組。圖用呢個資料夾入面現有嘅註解圖同原畫面。`study_content.py` 用 `STREAMS` 加新日期；11月4日嘅科目仍然由 `FIRST_HALF` 同 `SECOND_HALF` 拼出，11月3日嘅科目喺 `stream_2026_11_03.py`，11月2日嘅科目喺 `stream_2026_11_02.py`，10月28日嘅科目喺 `stream_2026_10_28.py`，10月27日嘅科目喺 `stream_2026_10_27.py`。
 
 本機（喺 repo 根目錄）：
 
@@ -36,9 +36,9 @@ App URL 由 Community Cloud 喺 deploy 時先定，空白 subdomain 會變成 `h
 - Martin Luk《Adding shorts again》，2026年11月3日（約 2:35:48）
 - Martin Luk《DRAM fat finger》，2026年11月2日（約 2:23:38）
 - Martin Luk《SOXX short》，2026年10月28日（約 1:28:18）
-- 本站收錄呢四場入面有技術分析嘅段落
+- Martin Luk《Strong bounce》，2026年10月27日（約 1:48:18）
+- 本站收錄呢五場入面有技術分析嘅段落
 - 圖上中文註解係之後加上嘅讀圖說明，可用「原畫面」對返未加字嘅截圖
-- 呢份係教育拆解，唔係投資建議
 
 ## 導覽
 
@@ -47,6 +47,7 @@ App URL 由 Community Cloud 喺 deploy 時先定，空白 subdomain 會變成 `h
 - `2026-11-03.html` — 2026年11月3日《Adding shorts again》嘅科目，按時間順序。
 - `2026-11-02.html` — 2026年11月2日《DRAM fat finger》嘅科目，按時間順序。
 - `2026-10-28.html` — 2026年10月28日《SOXX short》嘅科目，按時間順序。
+- `2026-10-27.html` — 2026年10月27日《Strong bounce》嘅科目，按時間順序。
 
 ## 科目（2026年11月4日，按時間）
 
@@ -128,6 +129,27 @@ App URL 由 Community Cloud 喺 deploy 時先定，空白 subdomain 會變成 `h
 12. `rules-vs-judgment.html` — 點解唔把規則交俾 AI（1:17:37–1:26:18）
 13. `let-stops-work.html` — 收結：交俾止蝕；最差係強勢收市再準備做多（1:26:28–1:28:18）
 
+## 科目（2026年10月27日，按時間）
+
+1. `nq-declining-emas.html` — 彈入下降均線，淡倉唔再加碼（06:11–07:07）
+2. `spy-resistance.html` — 都喺阻力，想睇市場點反應（13:26–13:40）
+3. `nbis-gap-9.html` — NBIS：彈入下降 9 同未補缺口（31:41–32:33）
+4. `indices-soxx-timing.html` — 指數同 SOXX 對齊，今日淡倉時機（32:33–33:17）
+5. `amd-soxx-9.html` — AMD 同 SOXX：21 同缺口上嘅 9（36:21–37:29）
+6. `rklb-daily-hourly.html` — RKLB：日線 9 同小時 50（43:36–46:08）
+7. `gev-earnings.html` — GEV 業績，傾向持有過市（54:13–54:27）
+8. `twst-avwap.html` — TWST：等錨定 VWAP 超調（54:38–56:32）
+9. `mrvl-entries.html` — MRVL：日線可以淡，低週期有多個入場（57:35–58:36）
+10. `ionq-vulnerable.html` — IONQ 睇落好脆弱（59:35–59:50）
+11. `sndk-oct9.html` — SNDK 10月9日入場：只在小時 9（1:01:18–1:03:35）
+12. `tem-not-short.html` — TEM 唔淡：軟件仲強，等 21 超調（1:03:35–1:05:24）
+13. `sell-into-strength.html` — 偏向賣喺強勢（1:05:57–1:09:06）
+14. `oil-break.html` — 大市小時 9 有彈，原油向下破（1:09:37–1:10:47）
+15. `dram-gap-reverse.html` — Memory ETF 超調後喺缺口倒轉（1:23:55–1:24:12）
+16. `cover-or-wait.html` — 想平淡倉，但又喺阻力猶豫（1:37:57–1:44:36）
+17. `crypto-both-ways.html` — 加密兩邊都可以，聽日有 FOMC（1:44:44–1:48:10）
+
+
 ## 資料夾
 
 - `index.html` — 直播目錄（離線入口，先揀日期）
@@ -135,11 +157,13 @@ App URL 由 Community Cloud 喺 deploy 時先定，空白 subdomain 會變成 `h
 - `2026-11-03.html` — 2026年11月3日《Adding shorts again》嘅科目目錄
 - `2026-11-02.html` — 2026年11月2日《DRAM fat finger》嘅科目目錄
 - `2026-10-28.html` — 2026年10月28日《SOXX short》嘅科目目錄
+- `2026-10-27.html` — 2026年10月27日《Strong bounce》嘅科目目錄
 - `streamlit_app.py` — Community Cloud 入口
-- `study_content.py` — Streamlit 用嘅科目內容。`STREAMS` 係日期目錄（最新排前）；11月4日科目由 `FIRST_HALF` 同 `SECOND_HALF` 拼成一條時間順序，11月3日科目喺 `stream_2026_11_03.py`，11月2日科目喺 `stream_2026_11_02.py`，10月28日科目喺 `stream_2026_10_28.py`
+- `study_content.py` — Streamlit 用嘅科目內容。`STREAMS` 係日期目錄（最新排前）；11月4日科目由 `FIRST_HALF` 同 `SECOND_HALF` 拼成一條時間順序，11月3日科目喺 `stream_2026_11_03.py`，11月2日科目喺 `stream_2026_11_02.py`，10月28日科目喺 `stream_2026_10_28.py`，10月27日科目喺 `stream_2026_10_27.py`
 - `stream_2026_11_03.py` — 2026年11月3日《Adding shorts again》嘅科目內容
 - `stream_2026_11_02.py` — 2026年11月2日《DRAM fat finger》嘅科目內容
 - `stream_2026_10_28.py` — 2026年10月28日《SOXX short》嘅科目內容
+- `stream_2026_10_27.py` — 2026年10月27日《Strong bounce》嘅科目內容
 - `requirements.txt` — `streamlit==1.67.0`
 - `.streamlit/config.toml` — 深色主題（跟 entrypoint，優先於 repo 根目錄設定）
 - `styles.css`、`script.js` — 靜態版
